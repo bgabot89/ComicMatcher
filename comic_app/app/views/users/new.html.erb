@@ -1,0 +1,14 @@
+<h1> Sign Up </h1>
+<%= form_for :user, url: "/users", method: "post" do |f| %>
+    Username: <%= f.text_field :username, placeholder: "Username" %>
+    <br>
+    Email: <%= f.text_field :email, placeholder: "Email" %>
+    <br>
+     First Name: <%= f.text_field :first_name, placeholder: "First Name" %>
+    <br>
+    Last Name: <%= f.text_field :last_name, placeholder: "Last Name" %>
+    <br>
+    Age: <%= f.text_field :age, placeholder: "Age" %>
+    <br>
+    <%= f.submit "save" %>
+<% end %>
