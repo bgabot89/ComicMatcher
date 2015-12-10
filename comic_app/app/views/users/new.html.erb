@@ -8,7 +8,12 @@
     <br>
     Last Name: <%= f.text_field :last_name, placeholder: "Last Name" %>
     <br>
-    Age: <%= f.text_field :age, placeholder: "Age" %>
+    Age: <%= f.number_field :age, placeholder: "Age" %>
     <br>
+    Password: <%= f.text_field :password, placeholder: "Password" %>
+    <br>
+  	Please select if you are signing up as a writer or an artist: <%= f.select :person, options_for_select([["Artist", true], ["Writer", true]]) %>
+    <br>
+
     <%= f.submit "save" %>
 <% end %>
