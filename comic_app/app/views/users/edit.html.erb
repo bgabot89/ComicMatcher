@@ -1,0 +1,15 @@
+<div class="jumbotron">
+  <h1>Update</h1>
+</div>
+<%= form_for @user, :url => user_path, :html => { :multipart => true } do |f| %>
+	  <br>
+	  <div>
+    About: <%= f.text_field :about, class: "form-control1", placeholder: "About" %>
+    </div>
+    <br>
+    <div class="text-field">
+    Technologies/Softwares you use: <%= f.text_field :tech, class: "form-control1", placeholder: "If you're an artist, please input the technologies that you use " %>
+    </div>
+    <br>
+    <%= f.submit "Update" %>
+    <% end %>
