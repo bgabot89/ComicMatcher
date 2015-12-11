@@ -18,6 +18,8 @@ get "/writers", to: "writers#show"
 
 get "/gallery/:user_id", to: "gallery#show"
 
+get "/works", to: "publishedworks#show"
+
 
 
 end

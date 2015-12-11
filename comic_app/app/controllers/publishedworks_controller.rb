@@ -1,0 +1,2 @@
+class PublishedworksController < ApplicationController
+end

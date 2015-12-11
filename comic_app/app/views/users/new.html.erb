@@ -1,4 +1,7 @@
-<h1> Sign Up </h1>
+<div class="jumbotron">
+  <h1>Sign Up</h1>
+</div>
+
 <%= form_for :user, url: "/users", method: "post" do |f| %>
     Username: <%= f.text_field :username, placeholder: "Username" %>
     <br>
