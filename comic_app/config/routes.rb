@@ -10,6 +10,12 @@ post "/sessions", to: "sessions#create"
 
 post "/logout", to: "sessions#destroy"
 
+get "/home", to: "home#show"
+
+get "/artists", to: "artists#show"
+
+get "/writers", to: "writers#show"
+
 
 
 end

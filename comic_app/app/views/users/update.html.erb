@@ -1,0 +1,11 @@
+<h1> Welcome to the Site </h1>
+<%= form_for :user, url: "/users", method: "post" do |f| %>
+	  <br>
+    About: <%= f.text_field :about, placeholder: "About" %>
+    <br>
+    <div class = "text-field">
+    Technologies/Softwares you use: <%= f.text_field :about, placeholder: "About" %>
+    </div>
+    <br>
+    <%= f.submit "Edit" %>
+    <% end %>

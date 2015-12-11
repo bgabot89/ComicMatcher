@@ -1,3 +1,22 @@
-<p> This is the profile page of <%= current_user.first_name %> </p>
+<h1> Profile page of <%= current_user.username %> </h1>
+
+Name: <%= current_user.first_name %> <%= current_user.last_name %>
+<br>
+Age: <%= current_user.age %> 
+<br>
+Writer or Artist: <%= current_user.person %> 
+<br>
+Email: <%= current_user.email %> 
+<p>About: <%= current_user.about %> </p>
+
+<p>Technologies Used: <%= current_user.tech %> </p>
+
+<h2>Please insert comments here:	 </h2>
+
+<div>
+
+<%= button_to "Edit Form", edit_user_path(@user), method: "get" %>
+</div>
+
 
 <p><%= button_to "Log out",  logout_path, method: "destroy" %> </p>
