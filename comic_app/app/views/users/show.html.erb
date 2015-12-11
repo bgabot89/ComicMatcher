@@ -7,6 +7,8 @@ Age: <%= current_user.age %>
 Writer or Artist: <%= current_user.person %> 
 <br>
 Email: <%= current_user.email %> 
+<br>
+Sex: <%= current_user.sex %> 
 <p>About: <%= current_user.about %> </p>
 
 <p>Technologies Used: <%= current_user.tech %> </p>
@@ -18,5 +20,9 @@ Email: <%= current_user.email %>
 <%= button_to "Edit Form", edit_user_path(@user), method: "get" %>
 </div>
 
+<div><%= button_to "Gallery",  "/gallery/{#user.id}", method: "get" %> </div>
 
-<p><%= button_to "Log out",  logout_path, method: "destroy" %> </p>
+<p> Interested in collaborating with <%=current_user.first_name %> ? Send an email to get in contact with them. </p>
+<%= button_to "Contact",  edit_user_path(@user), method: "get" %> 
+
+<div><%= button_to "Log out",  logout_path, method: "destroy" %> </div>
