@@ -16,9 +16,13 @@ get "/artists", to: "artists#show"
 
 get "/writers", to: "writers#show"
 
-get "/gallery/:user_id", to: "gallery#show"
+# get "/gallery/:user_id", to: "gallery#show"
 
 get "/works", to: "publishedworks#show"
+
+get "/users/:id/gallery", to: "gallery#show"
+
+
 
 
 

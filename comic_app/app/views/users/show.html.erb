@@ -21,8 +21,8 @@
 					
 						<div class="pull-left">
 							<ul class="nav nav-tabs">
-								<li class="active"><a href="#tab1" data-toggle="tab">Profile</a></li>
-								<li><a href="/gallery/{#user.id}" data-toggle="tab"><i class="glyphicon glyphicon-send"></i> Gallery</a></li>
+								<li class="active"><a href="" data-toggle="tab">Profile</a></li>
+								<li><a href="/users/<%= @user.id%>/gallery" data-toggle="tab"><i class="glyphicon glyphicon-send"></i> Gallery</a></li>
 							</ul>
 						</div>
 						
@@ -102,7 +102,11 @@ Sex: <%= @user.sex %>
 
 <p>Technologies Used: <%= @user.tech %> </p>
 
-<h2>Please insert comments here:	 </h2>
+<p> Interested in collaborating with <%=@user.first_name %> ? Send an email to get in contact with them. </p>
+<%= button_to edit_user_path(@user), method: "get" do %> Contact <i class="glyphicon glyphicon-print"></i>
+<%end%>
+
+
 
                 </div>
 				
@@ -116,7 +120,4 @@ Sex: <%= @user.sex %>
                                     
                           
 
-<p> Interested in collaborating with <%=@user.first_name %> ? Send an email to get in contact with them. </p>
-<%= button_to "Contact",  edit_user_path(@user), method: "get" %> 
 
-<div><%= button_to "Log out",  logout_path, method: "destroy" %> </div>
