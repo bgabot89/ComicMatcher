@@ -1,12 +1,96 @@
 
 <div class="jumbotron">
-  <h1>Profile</h1>
+  <h1><%= @user.username %>'s Profile</h1>
 </div>
 
+<!--Navbar -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-<h1> Profile page of <%= current_user.username %> </h1>
+<div class="container">
 
-Name: <%= current_user.first_name %> <%= current_user.last_name %>
+		
+	<div class="row">
+		
+		<div class="col-md-12"> 
+				
+			<div class="panel panel-default">
+			
+                <div class="panel-heading">
+               
+                    <span class="panel-title">
+					
+						<div class="pull-left">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tab1" data-toggle="tab">Profile</a></li>
+								<li><a href="/gallery/{#user.id}" data-toggle="tab"><i class="glyphicon glyphicon-send"></i> Gallery</a></li>
+							</ul>
+						</div>
+						
+                            <div class="btn-group pull-right">
+                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <i class="glyphicon glyphicon-cog"></i>
+                                    Options
+                                </button>
+                                <ul class="dropdown-menu" style="width:300px; padding:0px;">
+            						
+										<li>
+											    <form class="form-horizontal" id="preferences" action="" method="post" accept-charset="utf-8">
+
+												    <div class="panel panel-default" id="preferences" style="margin:0px;">
+												
+        													<div class="panel-heading">
+        														<span class="glyphicon glyphicon-wrench"></span>
+        														<span class="panel-label">User Preferences</span>
+        													</div>
+											   
+									    <div class="panel-body">
+						
+    										<div class="form-group">
+												<label for="text_size" class="col-lg-6 control-label">
+												Display Label
+												</label>
+												<div class="col-lg-6">
+													<div class="btn-group" data-toggle="buttons" style="margin:0px padding:0px;">
+														<label class="btn btn-default toggle-button" style="pull-left margin:0px padding:0px; width:50%">
+															<input id="inlineradio1" name="display_label" type="radio" value="">
+															Show
+														</label>
+														<label class="btn btn-default toggle-button" style="pull-right margin:0px padding:0px; width:50%">
+															<input id="inlineradio2" name="display_label" type="radio" value="hide" >
+															Hide
+														</label>
+													</div>
+												</div>
+											</div>
+	 
+										</div>
+													
+													<div class="panel-footer">
+														<div class="form-group">
+															<div class="col-lg-9 col-lg-offset-3"> 
+															  <button type="submit" class="btn btn-primary" style="width:80px;">Update</button> 
+															  <button type="submit" class="btn btn-default" style="width:80px;">Reset</button> 
+															</div>
+														</div>
+													</div>
+													
+												</div>
+											</form>
+										</li>
+									</ul>
+
+                          
+                            </div>
+						
+						<div class="clearfix"></div>
+
+					</span>
+					
+				</div>
+
+                <div class="panel-body">
+						<!--Insert Panel content here-->
+    		    Name: <%= current_user.first_name %> <%= current_user.last_name %>
 <br>
 Age: <%= current_user.age %> 
 <br>
@@ -21,12 +105,25 @@ Sex: <%= current_user.sex %>
 
 <h2>Please insert comments here:	 </h2>
 
+                </div>
+				
+            </div>
+			
+		</div>
+		
+    </div>
+
+</div>
+
+
+
+
+
+
 <div>
 
 <%= button_to "Edit Form", edit_user_path(@user), method: "get" %>
 </div>
-
-<div><%= button_to "Gallery",  "/gallery/{#user.id}", method: "get" %> </div>
 
 <p> Interested in collaborating with <%=current_user.first_name %> ? Send an email to get in contact with them. </p>
 <%= button_to "Contact",  edit_user_path(@user), method: "get" %> 

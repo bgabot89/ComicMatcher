@@ -1,3 +1,14 @@
 <div class="jumbotron">
-  <h1>Writers</h1>
+  <h1>List of Writers</h1>
 </div>
+<% @users.each do |writer| %>
+<% if writer.person == "Writer" %>
+<div>
+<ul>
+<li>
+Name: <%= writer.username %>
+</li>
+</ul>
+</div>
+<% end %>
+<% end %>
