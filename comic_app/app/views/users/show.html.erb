@@ -22,7 +22,7 @@
 						<div class="pull-left">
 							<ul class="nav nav-tabs">
 								<li class="active"><a href="" data-toggle="tab">Profile</a></li>
-								<li><a href="/users/<%= @user.id%>/gallery" data-toggle="tab"><i class="glyphicon glyphicon-send"></i> Gallery</a></li>
+								<li><a href="/users/<%= @user.id%>/gallery" data-toggle="tab"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
 							</ul>
 						</div>
 						
@@ -103,9 +103,8 @@ Sex: <%= @user.sex %>
 <p>Technologies Used: <%= @user.tech %> </p>
 
 <p> Interested in collaborating with <%=@user.first_name %> ? Send an email to get in contact with them. </p>
-<%= button_to edit_user_path(@user), method: "get" do %> Contact <i class="glyphicon glyphicon-print"></i>
+<%= button_to edit_user_path(@user), :class => "btn btn-default", method: "get" do %> Contact <i class="glyphicon glyphicon-envelope"></i>
 <%end%>
-
 
 
                 </div>

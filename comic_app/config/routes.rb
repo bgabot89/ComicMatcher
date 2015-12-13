@@ -20,7 +20,9 @@ get "/writers", to: "writers#show"
 
 get "/works", to: "publishedworks#show"
 
-get "/users/:id/gallery", to: "gallery#show"
+# get "/users/:id/gallery", to: "gallery#show"
+
+get "/users/:id/gallery", to: "users#showGal"
 
 
 
