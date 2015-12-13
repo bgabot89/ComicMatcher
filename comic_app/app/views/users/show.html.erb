@@ -27,10 +27,9 @@
 						</div>
 						
                             <div class="btn-group pull-right">
-                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <i class="glyphicon glyphicon-cog"></i>
-                                    Options
-                                </button>
+                                        
+                                    <%= button_to edit_user_path(@user), :class => "btn btn-default dropdown-toggle", method: "get" do %> Settings <i class="glyphicon glyphicon-cog"></i>
+                                    <%end%>
                                 <ul class="dropdown-menu" style="width:300px; padding:0px;">
             						
 										<li>
@@ -90,18 +89,18 @@
 
                 <div class="panel-body">
 						<!--Insert Panel content here-->
-    		    Name: <%= current_user.first_name %> <%= current_user.last_name %>
+    		    Name: <%= @user.first_name %> <%= @user.last_name %>
 <br>
-Age: <%= current_user.age %> 
+Age: <%= @user.age %> 
 <br>
-Writer or Artist: <%= current_user.person %> 
+Writer or Artist: <%= @user.person %> 
 <br>
-Email: <%= current_user.email %> 
+Email: <%= @user.email %> 
 <br>
-Sex: <%= current_user.sex %> 
-<p>About: <%= current_user.about %> </p>
+Sex: <%= @user.sex %> 
+<p>About: <%= @user.about %> </p>
 
-<p>Technologies Used: <%= current_user.tech %> </p>
+<p>Technologies Used: <%= @user.tech %> </p>
 
 <h2>Please insert comments here:	 </h2>
 
@@ -114,18 +113,10 @@ Sex: <%= current_user.sex %>
     </div>
 
 </div>
+                                    
+                          
 
-
-
-
-
-
-<div>
-
-<%= button_to "Edit Form", edit_user_path(@user), method: "get" %>
-</div>
-
-<p> Interested in collaborating with <%=current_user.first_name %> ? Send an email to get in contact with them. </p>
+<p> Interested in collaborating with <%=@user.first_name %> ? Send an email to get in contact with them. </p>
 <%= button_to "Contact",  edit_user_path(@user), method: "get" %> 
 
 <div><%= button_to "Log out",  logout_path, method: "destroy" %> </div>
