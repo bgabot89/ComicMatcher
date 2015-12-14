@@ -9,4 +9,11 @@ class User < ActiveRecord::Base
     @user.try(:authenticate, params[:password])
   end
 
+has_attached_file :avatar,
+  :styles => { :medium => "250x200>", :thumb => "125x125#" },
+  :default_url => "/images/default.jpg"
+
+  validates_attachment :avatar,
+                       :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] },
+                       :size => { :in => 0..1000.kilobytes }
 end

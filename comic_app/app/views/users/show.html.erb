@@ -89,7 +89,9 @@
 
                 <div class="panel-body">
 						<!--Insert Panel content here-->
-						Avatar: <%= @user.avatar %>
+
+					 <%= image_tag @user.avatar.url(:thumb) %>
+						<br>
     		    Name: <%= @user.first_name %> <%= @user.last_name %>
 <br>
 Age: <%= @user.age %> 
