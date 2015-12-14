@@ -27,8 +27,9 @@
 						</div>
 						
                             <div class="btn-group pull-right">
-                                        
+                                    <% if current_user == @user %>    
                                     <%= button_to edit_user_path(@user), :class => "btn btn-default dropdown-toggle", method: "get" do %> Settings <i class="glyphicon glyphicon-cog"></i>
+                                    <%end%>
                                     <%end%>
                                 <ul class="dropdown-menu" style="width:300px; padding:0px;">
             						
@@ -105,8 +106,10 @@ Gender: <%= @user.sex %>
 
 <p>Technologies Used: <%= @user.tech %> </p>
 
+<% if current_user != @user %> 
 <p> Interested in collaborating with <%=@user.first_name %> ? Send an email to get in contact with them. </p>
 <%= button_to edit_user_path(@user), :class => "btn btn-default", method: "get" do %> Contact <i class="glyphicon glyphicon-envelope"></i>
+<%end%>
 <%end%>
 
 
