@@ -29,10 +29,8 @@
 						</div>
 						
                             <div class="btn-group pull-right">
-                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <i class="glyphicon glyphicon-cog"></i>
-                                    Settings
-                                </button>
+                                  <%= button_to edit_user_path(@user), :class => "btn btn-default dropdown-toggle", method: "get" do %> Settings <i class="glyphicon glyphicon-cog"></i>
+                                    <%end%>
                                 <ul class="dropdown-menu" style="width:300px; padding:0px;">
             						
 										<li>
@@ -91,9 +89,17 @@
 				</div>
 
                 <div class="panel-body">
-                <% if @user == "Artist"%>
+                <% if @user.person == "Artist"%>
                 <p> Post your artwork here </p>
-                <%else%>
-                <p> Post your Writings here </p>
+                <%= @user.username %>
                 <%end%>
+                <!--trying to render drawing from each user -->
+
+						<% @user.drawings.each do |drawing| %>
+						<li class="list-group-item">
+						<%= drawing.user %>
+						</li>
+						<% end %>
+                
+
                 </div>

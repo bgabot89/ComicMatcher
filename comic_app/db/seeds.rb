@@ -10,3 +10,4 @@ user1= User.create(username: "Bchan", first_name: "Brian", last_name: "Gabot", a
 user2= User.create(username: "Jamester", first_name: "Jamey", last_name: "Hollis", age: 20, email: "hollisjamey@gmail.com", password: "password", person: "Writer", sex: "Male", about: "My name is Jamey", tech: "Softwares: Microsoft Word")
 
 drawing1= Drawing.create(name: "Fiora", picture: "/images/fiora.png")
+

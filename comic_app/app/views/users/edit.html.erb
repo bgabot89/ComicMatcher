@@ -11,5 +11,7 @@
     Technologies/Softwares you use: <%= f.text_field :tech, class: "form-control1", placeholder: "If you're an artist, please input the technologies that you use " %>
     </div>
     <br>
+
+    <span class ="selector-text"> Update your Avatar:</span> <%= f.file_field :avatar, class: "form-control" %><br>
     <%= f.submit "Update" %>
     <% end %>
