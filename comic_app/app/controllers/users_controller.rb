@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
 	def showGal
 		 @user = User.find(params[:id])
+		 	@drawings = @user.drawings
     render :showGal
 	end
 
@@ -25,6 +26,21 @@ class UsersController < ApplicationController
 		if user.save 
 			redirect_to user_path(user)
 		end
+
+			#testing creation of images
+		   respond_to do |format|
+      if @user.save
+
+        if params[:images]
+          # The magic is here ;)
+          params[:images].each { |image|
+            @user.drawings.create(image: image)
+          }
+        end
+      end
+
+    end
+
 	end
 
 	def edit
@@ -32,12 +48,29 @@ class UsersController < ApplicationController
   end
 
   def update
-  	user_id = params[:id]
-  	user = User.find(user_id)
-  	updated_attributes = params.require(:user).permit(:about, :tech, :avatar)
-  	user.update_attributes(updated_attributes)
-  	redirect_to user
+
+  		#test for update
+  		user_id = params[:id]
+  		@user = User.find(user_id)
+  		updated_attributes = params.require(:user).permit(:about, :tech, :avatar, :image)
+  	if @user.update_attributes(updated_attributes)
+        if params[:images]
+          # The magic is here ;)
+          params[:images].each { |image|
+            @user.drawings.create(image: image)
+          }
+          redirect_to @user
+        end
+
+
+     # old code
+  	# user_id = params[:id]
+  	# user = User.find(user_id)
+  	# updated_attributes = params.require(:user).permit(:about, :tech, :avatar)
+  	# user.update_attributes(updated_attributes)
+  	# redirect_to user
   end
+end
 
 	private
 	def user_params

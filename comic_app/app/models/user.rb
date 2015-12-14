@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :writings
-	has_many :drawings
+	has_many :drawings, :dependent => :destroy
 
 	has_secure_password
 
