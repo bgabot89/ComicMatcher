@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
 	has_many :writings
 	has_many :drawings, :dependent => :destroy
+  validates :email, uniqueness: true
+  validates :email, presence: true
+  validates :username, uniqueness: true
+  validates :username, presence: true
 
 	has_secure_password
 

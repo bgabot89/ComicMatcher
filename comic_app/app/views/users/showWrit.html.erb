@@ -1,6 +1,6 @@
 
 <div class="jumbotron">
-  <h1><%= @user.username %>'s Gallery</h1>
+  <h1><%= @user.username %>'s Writings</h1>
 </div>
 
 <!--Navbar -->
@@ -24,8 +24,8 @@
 
 
 								<li><%= link_to "Profile", user_path(@user) %> </li>
-								<li class="active"><a href="" data-toggle="tab"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
-									<li><a href="/users/<%= @user.id%>/writings" data-toggle="tab"><i class="glyphicon glyphicon-pencil"></i> Writings</a></li>
+								<li class=""><a href="/users/<%= @user.id%>/gallery" data-toggle="tab"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
+									<li class="active"><a href="" data-toggle="tab"><i class="glyphicon glyphicon-pencil"></i> Writings</a></li>
 							</ul>
 						</div>
 						
@@ -92,30 +92,15 @@
 				</div>
 
                 <div class="panel-body">
-                
+                <% if @user.person == "Writer" %>
+                <p> Post your writings here </p>
+                   <button class ="btn btn-default" data-no-turbolink data-toggle="modal" data-target="#edit-modal">Add a New Writing Post</button>
+                <% else %>
+                <p> You must be registered as a writer to post writings </p>
+                    <% end %>
+             
+								</div>
 
-                <!--trying to render drawing from each user -->
-				<% if @user.person == "Artist" %>
-				<div class="row">
-  <ul class="thumbnails files">
-  <% @drawings.each do |pic| %>
-    <li class="span3" id="drawing_<%= pic.id %>">
-    <div class="thumbnail">
-      <%= image_tag pic.image.url %>
-      <div class="caption">
-        <p style="text-align: center;">
-				
-        </p>
-      </div>
-    </div>
-    </li>
-    </ul>
-      <% end %>
-    <% else %>
-    <p> You must be registered as an Artist to post artwork </p>
-
-  <% end %>
-
-                
+ 
 
                 </div>

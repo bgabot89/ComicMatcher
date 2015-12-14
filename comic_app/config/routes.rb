@@ -24,6 +24,8 @@ get "/works", to: "publishedworks#show"
 
 get "/users/:id/gallery", to: "users#showGal"
 
+get "/users/:id/writings", to: "users#showWrit"
+
 
 
 

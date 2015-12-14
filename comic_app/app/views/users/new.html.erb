@@ -13,9 +13,9 @@
     <br>
     Age: <%= f.number_field :age, placeholder: "Age", min:13, max:100 %>
     <br>
-    Password: <%= f.text_field :password, placeholder: "Password" %>
+    Password: <%= f.password_field :password, placeholder: "Password" %>
     <br>
-  	Please select if you are signing up as a writer or an artist: <%= f.select :person, options_for_select([["Artist", true], ["Writer", true]]) %>
+  	Please select if you are signing up as a writer or an artist: <%= f.select :person, options_for_select([["Artist", "Artist"], ["Writer", "Writer"]]) %>
     <br>
 
     <%= f.submit "Sign Up" %>

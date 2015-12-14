@@ -21,25 +21,35 @@ class UsersController < ApplicationController
     render :showGal
 	end
 
+	def showWrit
+			 @user = User.find(params[:id])
+    render :showWrit
+  end
+
+
 	def create
-		user = User.new(user_params)
-		if user.save 
-			redirect_to user_path(user)
+		@user = User.new(user_params)
+    p user_params
+		if @user.save 
+      session[:user_id] = @user.id
+			redirect_to user_path(@user)
+    else
+      redirect_to sign_up_path
 		end
 
-			#testing creation of images
-		   respond_to do |format|
-      if @user.save
+			# #testing creation of images
+		 #   respond_to do |format|
+   #    if @user.save
 
-        if params[:images]
-          # The magic is here ;)
-          params[:images].each { |image|
-            @user.drawings.create(image: image)
-          }
-        end
-      end
+   #      if params[:images]
+   #        # The magic is here ;)
+   #        params[:images].each { |image|
+   #          @user.drawings.create(image: image)
+   #        }
+   #      end
+   #    end
 
-    end
+    # end
 
 	end
 
