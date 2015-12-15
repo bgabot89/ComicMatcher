@@ -22,7 +22,10 @@ class UsersController < ApplicationController
 	end
 
 	def showWrit
+    @users = User.all
 			 @user = User.find(params[:id])
+       # @writing = Writing.new(user)
+       @writings = @user.writings
     render :showWrit
   end
 
@@ -57,7 +60,7 @@ class UsersController < ApplicationController
   def writNew
     render :newWrit
   end
-  
+
 	def edit
   	@user = User.find(params[:id])
   end
@@ -74,7 +77,7 @@ class UsersController < ApplicationController
           params[:images].each { |image|
             @user.drawings.create(image: image)
           }
-          redirect_to @user
+          # redirect_to @user
         end
 
 

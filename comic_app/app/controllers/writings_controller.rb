@@ -1,6 +1,11 @@
-class WritersController < ApplicationController
-	def show
+class WritingsController < ApplicationController
+		def show
 	@users = User.all
+	 id = params[:id]
+  # find the writing with that id and save to an instance variable
+  @writing = Writing.find(id)
+  # render the show page -- it will have access to the @writing variable
+  render :show
 	end
 
 	def new
@@ -15,10 +20,10 @@ class WritersController < ApplicationController
 	end
 
  def create 
-    @user = User.find(params[:id])
- # event = Event.new(event_params)
+    @user = User.find(session[:user_id])
     writing = Writing.create(writing_params)
     if writing.save  
+    	p writing
       redirect_to @user
     else
       redirect_to root_path
@@ -27,7 +32,6 @@ class WritersController < ApplicationController
 
 private
 def writing_params
-  params.require(:writing).permit(:name, :description)
+  params.require(:writing).permit(:name, :description, :user_id)
 end
-
 end

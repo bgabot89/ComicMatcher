@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 root to: 'users#index'
 resources :users
+resources :writings
+
 
 get "/sign_up", to: "users#new", as: "sign_up"
 
@@ -27,8 +29,14 @@ get "/users/:id/gallery", to: "users#showGal"
 get "/users/:id/writings", to: "users#showWrit"
 
 
-# commenting out for now - old writNew routes
-get "/users/:id/writings/edit", to: "users#writNew"
+
+
+# # commenting out for now - old writNew routes
+# get "/users/:id/writings/edit", to: "users#writNew"
+
+# get "/writers/new", to: "writers#new", as: "writings"
+
+# post "/writers/", to: "writers#create"
 
 
 

@@ -66,10 +66,9 @@
                 <div class="panel-body">
                 <% if @user.person == "Writer" %>
                 <p> Post your writings here </p>
-                <!--Adds button to create a new post via modal dynamic-->
-                   <button class ="btn btn-default" data-no-turbolink data-toggle="modal" data-target="#edit-modal">Add a New Writing Post</button>
+              
                    <!--new button to create a new post-->
-                   <%= button_to "/users/:id/writings/edit", :class => "btn-btn-default", method: "get" do %> Add a New Writing Post 
+                   <%= button_to "/writings/new", :class => "btn-btn-default", method: "get" do %> Add a New Writing Post 
                    <%end%>
                 <% else %>
                 <p> You must be registered as a writer to post writings </p>
@@ -79,21 +78,22 @@
 
              
 								</div>
+									
+								<!--Render user writings -->
+								<% @writings.each do |writing| %>
+								<ul>
+								<li class="list-group-item">
+								Writing: <%= writing.name %>
+								<br>
+								Description:<%= writing.description %>
+								</li>
+								</ul>
+								<% end %>
+							
 
-								
-								<!--Form popup for Writings-->
-								<%= form_for @user do |f| %>
-								<div id="edit-modal" class="modal fade">
-								<div class="modal-dialog">
-								<div class="modal-content">
-								</div>
-								<div class="modal-body">
-								</fieldset>
-								<legend>Add a New Post</legend>
-								<%= f.submit "Add new Post", class: "btn btn-primary" %>
-								</div>
-								</div>
-								<%end%>
+
+
+							
 
  
 
