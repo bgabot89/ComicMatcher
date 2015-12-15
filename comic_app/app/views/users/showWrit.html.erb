@@ -21,68 +21,40 @@
 					
 						<div class="pull-left">
 							<ul class="nav nav-tabs">
-
-
 								<li><%= link_to "Profile", user_path(@user) %> </li>
-								<li class=""><a href="/users/<%= @user.id%>/gallery" data-toggle="tab"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
-									<li class="active"><a href="" data-toggle="tab"><i class="glyphicon glyphicon-pencil"></i> Writings</a></li>
+								<li><a href="/users/<%= @user.id%>/gallery"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
+								<li class="active"><a href=""><i class="glyphicon glyphicon-pencil"></i> Writings</a></li>
 							</ul>
 						</div>
 						
                             <div class="btn-group pull-right">
-                            			<% if current_user == @user %>
-                                  <%= button_to edit_user_path(@user), :class => "btn btn-default dropdown-toggle", method: "get" do %> Settings <i class="glyphicon glyphicon-cog"></i>
+                                    <% if current_user == @user %>    
+                                    <%= button_to edit_user_path(@user), :class => "btn btn-default dropdown-toggle", method: "get" do %> Settings <i class="glyphicon glyphicon-cog"></i>
                                     <%end%>
                                     <%end%>
                                 <ul class="dropdown-menu" style="width:300px; padding:0px;">
             						
 										<li>
-											    <form class="form-horizontal" id="preferences" action="" method="post" accept-charset="utf-8">
+											    
 
 												    <div class="panel panel-default" id="preferences" style="margin:0px;">
-												
-        													<div class="panel-heading">
-        														<span class="glyphicon glyphicon-wrench"></span>
-        														<span class="panel-label">User Preferences</span>
-        													</div>
 											   
 									    <div class="panel-body">
 						
     										<div class="form-group">
-												<label for="text_size" class="col-lg-6 control-label">
-												Display Label
-												</label>
-												<div class="col-lg-6">
-													<div class="btn-group" data-toggle="buttons" style="margin:0px padding:0px;">
-														<label class="btn btn-default toggle-button" style="pull-left margin:0px padding:0px; width:50%">
-															<input id="inlineradio1" name="display_label" type="radio" value="">
-															Show
-														</label>
-														<label class="btn btn-default toggle-button" style="pull-right margin:0px padding:0px; width:50%">
-															<input id="inlineradio2" name="display_label" type="radio" value="hide" >
-															Hide
-														</label>
-													</div>
-												</div>
+											
 											</div>
 	 
 										</div>
 													
-													<div class="panel-footer">
-														<div class="form-group">
-															<div class="col-lg-9 col-lg-offset-3"> 
-															  <button type="submit" class="btn btn-primary" style="width:80px;">Update</button> 
-															  <button type="submit" class="btn btn-default" style="width:80px;">Reset</button> 
-															</div>
-														</div>
-													</div>
+							
 													
 												</div>
-											</form>
+											
 										</li>
 									</ul>
 
-                              
+                          
                             </div>
 						
 						<div class="clearfix"></div>
@@ -94,12 +66,34 @@
                 <div class="panel-body">
                 <% if @user.person == "Writer" %>
                 <p> Post your writings here </p>
+                <!--Adds button to create a new post via modal dynamic-->
                    <button class ="btn btn-default" data-no-turbolink data-toggle="modal" data-target="#edit-modal">Add a New Writing Post</button>
+                   <!--new button to create a new post-->
+                   <%= button_to "/users/:id/writings/edit", :class => "btn-btn-default", method: "get" do %> Add a New Writing Post 
+                   <%end%>
                 <% else %>
                 <p> You must be registered as a writer to post writings </p>
                     <% end %>
+
+
+
              
 								</div>
+
+								
+								<!--Form popup for Writings-->
+								<%= form_for @user do |f| %>
+								<div id="edit-modal" class="modal fade">
+								<div class="modal-dialog">
+								<div class="modal-content">
+								</div>
+								<div class="modal-body">
+								</fieldset>
+								<legend>Add a New Post</legend>
+								<%= f.submit "Add new Post", class: "btn btn-primary" %>
+								</div>
+								</div>
+								<%end%>
 
  
 

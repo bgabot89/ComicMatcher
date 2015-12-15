@@ -53,6 +53,11 @@ class UsersController < ApplicationController
 
 	end
 
+
+  def writNew
+    render :newWrit
+  end
+  
 	def edit
   	@user = User.find(params[:id])
   end
@@ -79,6 +84,7 @@ class UsersController < ApplicationController
   	# updated_attributes = params.require(:user).permit(:about, :tech, :avatar)
   	# user.update_attributes(updated_attributes)
   	# redirect_to user
+    redirect_to @user
   end
 end
 

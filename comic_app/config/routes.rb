@@ -27,6 +27,10 @@ get "/users/:id/gallery", to: "users#showGal"
 get "/users/:id/writings", to: "users#showWrit"
 
 
+# commenting out for now - old writNew routes
+get "/users/:id/writings/edit", to: "users#writNew"
+
+
 
 
 

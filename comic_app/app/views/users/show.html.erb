@@ -3,6 +3,7 @@
   <h1><%= @user.username %>'s Profile</h1>
 </div>
 
+
 <!--Navbar -->
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -22,8 +23,8 @@
 						<div class="pull-left">
 							<ul class="nav nav-tabs">
 								<li class="active"><a href="" data-toggle="tab">Profile</a></li>
-								<li><a href="/users/<%= @user.id%>/gallery" data-toggle="tab"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
-								<li><a href="/users/<%= @user.id%>/writings" data-toggle="tab"><i class="glyphicon glyphicon-pencil"></i> Writings</a></li>
+								<li><a href="/users/<%= @user.id%>/gallery"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
+								<li><a href="/users/<%= @user.id%>/writings"><i class="glyphicon glyphicon-pencil"></i> Writings</a></li>
 							</ul>
 						</div>
 						
@@ -35,48 +36,22 @@
                                 <ul class="dropdown-menu" style="width:300px; padding:0px;">
             						
 										<li>
-											    <form class="form-horizontal" id="preferences" action="" method="post" accept-charset="utf-8">
+											    
 
 												    <div class="panel panel-default" id="preferences" style="margin:0px;">
-												
-        													<div class="panel-heading">
-        														<span class="glyphicon glyphicon-wrench"></span>
-        														<span class="panel-label">User Preferences</span>
-        													</div>
 											   
 									    <div class="panel-body">
 						
     										<div class="form-group">
-												<label for="text_size" class="col-lg-6 control-label">
-												Display Label
-												</label>
-												<div class="col-lg-6">
-													<div class="btn-group" data-toggle="buttons" style="margin:0px padding:0px;">
-														<label class="btn btn-default toggle-button" style="pull-left margin:0px padding:0px; width:50%">
-															<input id="inlineradio1" name="display_label" type="radio" value="">
-															Show
-														</label>
-														<label class="btn btn-default toggle-button" style="pull-right margin:0px padding:0px; width:50%">
-															<input id="inlineradio2" name="display_label" type="radio" value="hide" >
-															Hide
-														</label>
-													</div>
-												</div>
+											
 											</div>
 	 
 										</div>
 													
-													<div class="panel-footer">
-														<div class="form-group">
-															<div class="col-lg-9 col-lg-offset-3"> 
-															  <button type="submit" class="btn btn-primary" style="width:80px;">Update</button> 
-															  <button type="submit" class="btn btn-default" style="width:80px;">Reset</button> 
-															</div>
-														</div>
-													</div>
+							
 													
 												</div>
-											</form>
+											
 										</li>
 									</ul>
 
