@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :user_notifications
-root to: 'users#index'
+root to: 'home#show'
 resources :users
 resources :writings
 

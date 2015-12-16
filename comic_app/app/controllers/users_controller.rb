@@ -12,13 +12,29 @@ class UsersController < ApplicationController
 
 	def show
 		 @user = User.find(params[:id])
-    render :show
+     # @user = User.find(user_params)
+
+     
+    # render :show
 	end
 
+   #this method will send an email to the user
   def connect 
     @user = User.find(params[:id])
     p "Sent"
-    redirect_to request_path
+    #if the connect method is called, send an email to that user
+     respond_to do |format|
+      UserMailer.notification_email(@user).deliver
+      format.html { redirect_to(request_path, :notice => 'User has successfully been sent an email.') }
+      # format.json { render json: @user, status: :created, location: @user }
+    # else
+    #   format.html { render action: "show" }
+    #   format.json { render json: @user.errors, status: :unprocessable_entity}
+    end
+    
+  
+
+    # redirect_to request_path
   end
 
 	def showGal
@@ -34,7 +50,6 @@ class UsersController < ApplicationController
        @writings = @user.writings
     render :showWrit
   end
-
 
 	def create
 		@user = User.new(user_params)
@@ -61,7 +76,6 @@ class UsersController < ApplicationController
     # end
 
 	end
-
 
   def writNew
     render :newWrit
@@ -99,7 +113,7 @@ end
 
 	private
 	def user_params
-		params.require(:user).permit(:username, :first_name, :last_name, :email, :password, :age, :person)
+		params.require(:user).permit(:username, :first_name, :last_name, :email, :password, :age, :person, :sex)
 	end
 
 end

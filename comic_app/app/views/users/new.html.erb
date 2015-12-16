@@ -1,22 +1,72 @@
 <div class="jumbotron">
-  <h1>Sign Up</h1>
+  <h1 class="jumbotron-text">Sign Up</h1>
 </div>
 
 <%= form_for :user, url: "/users", method: "post" do |f| %>
-    Username: <%= f.text_field :username, placeholder: "Username" %>
-    <br>
-    Email: <%= f.text_field :email, placeholder: "Email" %>
-    <br>
-     First Name: <%= f.text_field :first_name, placeholder: "First Name" %>
-    <br>
-    Last Name: <%= f.text_field :last_name, placeholder: "Last Name" %>
-    <br>
-    Age: <%= f.number_field :age, placeholder: "Age", min:13, max:100 %>
-    <br>
-    Password: <%= f.password_field :password, placeholder: "Password" %>
-    <br>
-  	Please select if you are signing up as a writer or an artist: <%= f.select :person, options_for_select([["Artist", "Artist"], ["Writer", "Writer"]]) %>
-    <br>
+<div class="container">
+    <div class="row">
+        <form role="form">
+            <div class="col-lg-6">
+                <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
+                <div class="form-group">
+                    <label for="InputName">Enter Username*</label>
+                    <div class="input-group">
+                        <%= f.text_field :username, placeholder: "Username" do %> Enter Username
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span> 
+                    </div>
+                </div>
+                <%end%>
+                <div class="form-group">
+                    <label for="InputEmail">Enter Email*</label>
+                    <div class="input-group">
+                      <%= f.text_field :email, placeholder: "Email" do%>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <%end%>
+                <div class="form-group">
+                    <label for="InputEmail">First Name</label>
+                    <div class="input-group">
+                             <%= f.text_field :first_name, placeholder: "First Name" do %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <% end %>
+                   <div class="form-group">
+                    <label for="InputEmail">Last Name</label>
+                    <div class="input-group">
+                             <%= f.text_field :last_name, placeholder: "Last Name" do %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <% end %>
+                <div class="form-group">
+                    <label for="InputAge">Enter Age</label>
+                    <div class="input-group">
+                        <%= f.number_field :age, placeholder: "Age", min:13, max:100 do%>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <%end%>
+                <br>
+                <label for="InputPassword">Enter Password*</label>
+                <br>
+                <%= f.password_field :password, placeholder: "Password" %>
+                <br>
+                <label for="ChooseArtist">Please select if you are signing up as a writer or an artist:</label>
+                <br>
+                 <%= f.select :person, options_for_select([["Artist", "Artist"], ["Writer", "Writer"]]) %>
+                <br>
+                <label for="ChooseGender">Please specify your Gender:</label>
+                <br>
+                 <%= f.select :sex, options_for_select([["Male", "Male"], ["Female", "Female"]]) %>
+                 <br>
+                 <div class="Sign-up">
+                <%= f.submit "Sign Up", class: "btn btn-info" %>
+                <div>
 
-    <%= f.submit "Sign Up" %>
-<% end %>
+            </div>
+        </form>
+    </div>
+</div>
+<%end%>

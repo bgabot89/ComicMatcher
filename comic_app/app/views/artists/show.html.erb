@@ -1,12 +1,13 @@
 <div class="jumbotron">
-  <h1>List of Artists</h1>
+  <h1 class="jumbotron-text">List of Artists</h1>
 </div>
+
 <% @users.each do |artist| %>
 <% if artist.person == "Artist" %>
 <div>
 <ul>
-<li>
-Name: <%= link_to artist.username, user_path(artist) %>
+<li class="text-art">
+<%= link_to artist.username, user_path(artist) %>
 </li>
 </ul>
 </div>
