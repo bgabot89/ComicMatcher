@@ -35,8 +35,18 @@
 	margin-bottom:10px;
 }
 
+.jumbotron-text2 {
+	font-family: Arial;
+	text-indent: 350px;
+	margin-bottom:10px;
+}
+
 .text-art {
 	font-size: 20px	;
+}
+
+#home-text{
+	text-align: center;
 }
 
 

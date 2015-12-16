@@ -33,6 +33,8 @@ post "/users/:id/connect", to: "users#connect", as: "connect"
 
 get "/request", to: "users#sendReq", as: "request"
 
+get "/users/:id/drawings/new", to: "users#newDraw", as: "draw"
+
 
 
 

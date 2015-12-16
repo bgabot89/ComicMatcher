@@ -63,6 +63,8 @@
 				</div>
 
                 <div class="panel-body">
+                   <%= button_to draw_path, :class => "btn btn-default", method: "get" do %> Add a New Drawing Post 
+									<%end%>
                 
 
                 <!--trying to render drawing from each user -->
@@ -82,7 +84,7 @@
     </li>
     </ul>
       <% end %>
-    <% else %>
+    <%else %>
     <p> You must be registered as an Artist to post artwork </p>
 
   <% end %>
