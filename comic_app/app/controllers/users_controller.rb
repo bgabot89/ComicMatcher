@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     p "Sent"
     #if the connect method is called, send an email to that user
      respond_to do |format|
-      UserMailer.notification_email(@user).deliver
+      UserMailer.notification_email(@user).deliver_now
       format.html { redirect_to(request_path, :notice => 'User has successfully been sent an email.') }
       # format.json { render json: @user, status: :created, location: @user }
     # else

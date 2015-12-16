@@ -31,6 +31,12 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "paperclip", "~> 4.3"
 
+gem 'material_design_lite-rails'
+
+gem 'bootstrap-material-design'
+
+gem "figaro"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
