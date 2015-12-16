@@ -72,6 +72,7 @@
 
 									
 								<!--Render user writings -->
+								<% if @user.person == "Writer" %>
 								<%= @user.username %> 's Writings 
 								<% @writings.each do |writing| %>
 								<ul>
@@ -81,6 +82,7 @@
 								Description:<%= writing.description %>
 								</li>
 								</ul>
+								<% end %>
 								<% end %>
 
                 </div>

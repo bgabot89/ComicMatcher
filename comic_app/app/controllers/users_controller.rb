@@ -15,6 +15,12 @@ class UsersController < ApplicationController
     render :show
 	end
 
+  def connect 
+    @user = User.find(params[:id])
+    p "Sent"
+    redirect_to request_path
+  end
+
 	def showGal
 		 @user = User.find(params[:id])
 		 	@drawings = @user.drawings

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_notifications
 root to: 'users#index'
 resources :users
 resources :writings
@@ -27,6 +28,10 @@ get "/works", to: "publishedworks#show"
 get "/users/:id/gallery", to: "users#showGal"
 
 get "/users/:id/writings", to: "users#showWrit"
+
+post "/users/:id/connect", to: "users#connect", as: "connect"
+
+get "/request", to: "users#sendReq", as: "request"
 
 
 
