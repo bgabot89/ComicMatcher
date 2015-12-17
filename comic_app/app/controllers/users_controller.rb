@@ -133,13 +133,13 @@ end
 def destroy
   @user = User.find(params[:id])
   id = params[:id]
-  @user.writings()
+  # @user.writings
   # :id is being set to user.id
-   # writing = Writing.find(:id)
-   #  if current_user.writings.include? writing
-   #    writing.destroy
+   writings =  Writing.find(:id)
+    if current_user.writings.include? writing
+      writing.destroy
       redirect_to user_path(@user)
-  # end
+  end
 end
 
 	private

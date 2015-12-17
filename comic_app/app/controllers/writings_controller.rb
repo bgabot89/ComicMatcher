@@ -32,12 +32,12 @@ class WritingsController < ApplicationController
 
   def destroy
     @user = User.find(session[:user_id])
-    id = params[:id]
-    writing = Writing.find(id)
-    if current_user.writings.include? writing
-      writing.destroy
-      redirect_to user_path(@user)
-  end
+  
+  #   writing = Writing.find(id)
+  #   if current_user.writings.include? writing
+  #     writing.destroy
+  #     redirect_to user_path(@user)
+  # end
 end
 
 private

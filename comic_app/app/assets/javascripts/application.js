@@ -20,5 +20,10 @@
 
 $(document).ready(function() {
 	console.log("Doc has been loaded");
-});
+	 $('#checkbox1').change(function(){
+        if(this.checked)
+            $('#hidden').show();
+       
+	 });
+	});
 

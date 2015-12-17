@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 root to: 'home#show'
 resources :users
 resources :writings
-
+resources :publishedworks
 
 get "/sign_up", to: "users#new", as: "sign_up"
 
@@ -19,15 +19,20 @@ get "/artists", to: "artists#show"
 
 get "/writers", to: "writers#show"
 
+post "/publishedworks/new"
+
 # get "/gallery/:user_id", to: "gallery#show"
 
-get "/works", to: "publishedworks#show"
+# get "/works", to: "publishedworks#show"
+
 
 # get "/users/:id/gallery", to: "gallery#show"
 
 get "/users/:id/gallery", to: "users#showGal"
 
 get "/users/:id/writings", to: "users#showWrit"
+
+delete "/users/:user_id/writings", to: "writings#destroy", as: "destroy_users_writing"
 
 post "/users/:id/connect", to: "users#connect", as: "connect"
 

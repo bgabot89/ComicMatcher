@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :username, uniqueness: true
   validates :username, presence: true
+  validates :about, length: { maximum: 300 }
+  validates :tech, length: { maximum: 300 }
 
 	has_secure_password
 

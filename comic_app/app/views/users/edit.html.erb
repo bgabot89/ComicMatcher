@@ -9,13 +9,21 @@
 <div class="col-lg-10">
 	  <br>
 	  <div class="form-group">
-    About: <%= f.text_field :about, class: "form-control1", placeholder: "About" %>
+    About: <%= f.text_area :about, class: "form-control1", placeholder: "About" %>
     </div>
     <br>
     <div class="text-field">
-    Technologies/Softwares you use: <%= f.text_field :tech, class: "form-control1", placeholder: "If you're an artist, please input the technologies that you use " %>
+    Technologies/Softwares you use: <%= f.text_area :tech, class: "form-control1", placeholder: "If you're an artist, please input the technologies that you use " %>
     </div>
     <br>
+    <!--Allow users to toggle for specific elements hidden -->
+    <div class = "input-group">
+    Show Gender on Profile Page: 
+    <form action="">
+<input type="checkbox" class="checkbox1" name="Gender" value="Yes">Yes   
+<input type="checkbox" class="checkbox2" name="Gender" value="No">No 
+</form>
+    </div>
     <!--will update with gallery -->
   <div class="control-group"> Drawing:
       <!-- This is where the magic happens -->
