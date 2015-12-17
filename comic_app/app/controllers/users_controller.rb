@@ -129,6 +129,19 @@ def newDraw
    render :newDraw 
 end
 
+# destroy writings
+def destroy
+  @user = User.find(params[:id])
+  id = params[:id]
+  @user.writings()
+  # :id is being set to user.id
+   # writing = Writing.find(:id)
+   #  if current_user.writings.include? writing
+   #    writing.destroy
+      redirect_to user_path(@user)
+  # end
+end
+
 	private
 	def user_params
 		params.require(:user).permit(:username, :first_name, :last_name, :email, :password, :age, :person, :sex)

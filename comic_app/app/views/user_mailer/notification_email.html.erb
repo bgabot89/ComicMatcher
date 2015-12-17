@@ -6,12 +6,15 @@
   <body>
     <h1>Hello!</h1>
     <p>
-      You have a request from a user to be a collaboration partner. 
+      You have a request from the user <%= @user.username %> to be a collaboration partner.  
       <br>
     </p>
     <p>
      Please checkout this user's profile here.
     </p>
-    <p>If you'd like to collaborate with this person, click here.</p>
+    <p>If you'd like to collaborate with this person, please reach out to this user. Their email is <%= @user.email %> </p>
+    <p> Thanks, <p>
+    <br>
+    <p> The Collab-A-Comic Team </p>
   </body>
 </html>

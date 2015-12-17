@@ -18,4 +18,7 @@
 //= require bootstrap-material-design
 //= require_tree .
 
+$(document).ready(function() {
+	console.log("Doc has been loaded");
+});
 

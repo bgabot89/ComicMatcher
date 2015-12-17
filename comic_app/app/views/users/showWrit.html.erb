@@ -57,11 +57,31 @@
 				</div>
 
                 <div class="panel-body">
+                <!--Render user writings -->
+								<% if @user.person == "Writer" %>
+								<h1 class="user-text"><%= @user.username %> 's Writings </h1>
+								<% @writings.each do |writing| %>
+								<ul>
+								<li class="list-group-item">
+								Writing: <%= writing.name %>
+								<br>
+								Description: <p class="description"> <%= writing.description %> </p>
+								<br>
+								<%= button_to user_path(@user), :class => "btn btn-warning", method: :delete do %>
+								Delete
+								<%end%>
+								</li>
+								</ul>
+								<% end %>
+								<% end %>
+
                 <% if @user.person == "Writer" %> 
                 <% if current_user == @user %>
                    <!--new button to create a new post-->
-                   <%= button_to new_writing_path, :class => "btn btn-default", method: "get" do %> Add a New Writing Post 
+                   <div class = "centered">
+                <%= button_to new_writing_path, :class => "btn btn-info", method: "get" do %> Add a New Writing Post 
 									<%end%>
+									</div>
                 <% elsif current_user == @user %>
                 <p> You must be registered as a writer to post writings </p>
                 <% else %>
@@ -73,18 +93,6 @@
 
 
 									
-								<!--Render user writings -->
-								<% if @user.person == "Writer" %>
-								<%= @user.username %> 's Writings 
-								<% @writings.each do |writing| %>
-								<ul>
-								<li class="list-group-item">
-								Writing: <%= writing.name %>
-								<br>
-								Description:<%= writing.description %>
-								</li>
-								</ul>
-								<% end %>
-								<% end %>
+								
 
                 </div>

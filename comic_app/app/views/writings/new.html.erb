@@ -2,17 +2,34 @@
   <h1 class="jumbotron-text">New Writings Form</h1>
 </div>
 
-
 <%= form_for @writing do |f| %>
+<div class="container">
+<div class="row">
+<form role="form">
+<div class="col-lg-10">
 	  <br>
-	   <div>
+    <div class="centered">
+	   <div class="form-group">
       	<%= f.hidden_field :user_id, :value => "#{@user.id}" %>
       </div>
     Name: <%= f.text_field :name, placeholder: "Name" %>
-    <br>
-    <div class = "text-field">
-    Synopsis: <%= f.text_field :description, placeholder: "Description" %>
+    <div class = "form-group">
+    <div class="row">
+    <div class="col-lg-3" id="synopsis"> Synopsis: </div>
+    <div class="divvy col-lg-7">
+    <%= f.text_area :description, class: "form-control1", placeholder: "Description" %>
+    </div>
+    </div>
+    </div>
     </div>
     <br>
-    <%= f.submit "Submit" %>
+    <div class="centered">
+    <div class="form-group">
+    <%= f.submit "Submit", class: "btn btn-info" %>
     <% end %>
+    </div>
+    </div>
+    </div>
+    </form>
+    </div>
+        </div>

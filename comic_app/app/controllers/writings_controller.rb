@@ -30,6 +30,16 @@ class WritingsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(session[:user_id])
+    id = params[:id]
+    writing = Writing.find(id)
+    if current_user.writings.include? writing
+      writing.destroy
+      redirect_to user_path(@user)
+  end
+end
+
 private
 def writing_params
   params.require(:writing).permit(:name, :description, :user_id)
