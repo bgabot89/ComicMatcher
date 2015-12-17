@@ -22,6 +22,11 @@
                     <li>
                         <a href="/home">Home</a>
                    </li>
+                   <% if current_user %>
+                   <li>
+                        <a href="">Logged in as, <%= current_user.username %> </a>
+                   </li>
+                   <% end %>
                     <% if current_user %>
                     <li>
                         <%= link_to "Profile", user_path(current_user) %>

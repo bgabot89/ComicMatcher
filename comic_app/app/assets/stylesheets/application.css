@@ -94,3 +94,26 @@
 	text-align:center;
 }
 
+.card-content{
+	border: 3px solid black;
+}
+
+.mdl-card__media {
+background-position
+
+}
+.navbar-inverse.navbar {
+background-color: #3E91CF;
+}
+
+#jbheight {
+	background: url('/images/type.png');
+	 background-position: center;
+	 background-repeat: no-repeat;
+	  background-attachment: fixed;
+	  background-width:75%;
+}
+
+#jbheight2 {
+	background: url('/images/pencil.png');
+}

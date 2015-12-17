@@ -83,7 +83,7 @@ Gender: <%= @user.sex %>
 
 <p>Technologies Used: <%= @user.tech %> </p>
 
-<% if current_user != @user && current_user.person != @user.person %> 
+<% if current_user != @user %> 
 <p> Interested in collaborating with <%=@user.first_name %>? Send a request email to get in contact with them. </p>
 <%= button_to connect_path(@user), :class => "btn btn-info", method: :post, data: { confirm: "Do you want to send a request to this user?" } do %> Contact <i class="glyphicon glyphicon-envelope"></i>
 <%end%>
