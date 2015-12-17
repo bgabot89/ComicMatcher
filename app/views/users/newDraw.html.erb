@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <h1 class="jumbotron-text">Add Drawing</h1>
+</div>
+
+<%= form_for @user, :url => user_path, :html => { :multipart => true } do |f| %>
+    <!--will update with gallery -->
+  <div class="control-group"> Drawing:
+      <!-- This is where the magic happens -->
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+    </div>
+
+     <%= f.submit "Update" %>
+    <% end %>

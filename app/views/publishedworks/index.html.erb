@@ -1,0 +1,30 @@
+<div class="jumbotron">
+  <h1 class="jumbotron-text" id="pubwork">Published Works</h1>
+</div>
+<body>
+
+<div class="centered">
+<%= button_to "Publish a Comic", new_publishedwork_path, class: "btn btn-primary", method: :get%>  
+<% @publishedworks.each do |f|%>
+
+<br>
+Name:
+<%= f.name %>
+<br>
+Description:
+<%= f.description %>
+<br>
+Written by:
+<%= f.writer %>
+<br>
+Illustrated by:
+<%= f.artist %>
+<br>
+Link:
+<a href="http://<%= f.url %>"> <%= f.url %> </a>
+<br>
+</li>
+<%end%>
+</div>
+</body>
+

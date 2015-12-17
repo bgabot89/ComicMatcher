@@ -1,0 +1,18 @@
+<div class="jumbotron">
+  <h1 class="jumbotron-text">New Writing Post Form</h1>
+</div>
+
+
+<%= form_for @writing do |f| %>
+ <div>
+      	<%= f.hidden_field :user_id, :value => "#{@user.id}" %>
+      </div>
+	  <br>
+	     Name: <%= f.text_field :name, placeholder: "Name" %>
+    <br>
+    <div class = "text-field">
+    Synopsis: <%= f.text_field :description, placeholder: "Description" %>
+    </div>
+    <br>
+    <%= f.submit "Submit" %>
+    <% end %>

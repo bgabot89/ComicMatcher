@@ -1,0 +1,98 @@
+<div class="jumbotron">
+  <h1 class="jumbotron-text"><%= @user.username %>'s Writings</h1>
+</div>
+
+<!--Navbar -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container">
+
+		
+	<div class="row">
+		
+		<div class="col-md-12"> 
+				
+			<div class="panel panel-default">
+			
+                <div class="panel-heading">
+               
+                    <span class="panel-title">
+					
+						<div class="pull-left">
+							<ul class="nav nav-tabs">
+								<li><%= link_to "Profile", user_path(@user) %> </li>
+								<li><a href="/users/<%= @user.id%>/gallery"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
+								<li class="active"><a href=""><i class="glyphicon glyphicon-pencil"></i> Writings</a></li>
+							</ul>
+						</div>
+						
+                            <div class="btn-group pull-right">
+                                    <% if current_user == @user %>    
+                                    <%= button_to edit_user_path(@user), :class => "btn btn-default dropdown-toggle", method: "get" do %> Settings <i class="glyphicon glyphicon-cog"></i>
+                                    <%end%>
+                                    <%end%>
+                                <ul class="dropdown-menu" style="width:300px; padding:0px;">
+            						
+										<li>
+											    
+
+												    <div class="panel panel-default" id="preferences" style="margin:0px;">
+											   
+									    <div class="panel-body">
+						
+    										<div class="form-group">
+											
+											</div>
+	 
+										</div>						
+												</div>
+										</li>
+									</ul>
+                            </div>
+						
+						<div class="clearfix"></div>
+
+					</span>
+					
+				</div>
+
+                <div class="panel-body">
+                <!--Render user writings -->
+								<% if @user.person == "Writer" %>
+								<h1 class="user-text"><%= @user.username %> 's Writings </h1>
+								<% @writings.each do |writing| %>
+								<ul>
+								<li class="list-group-item">
+								Name: <%= writing.name %>
+								<br>
+								Description: <p class="description"> <%= writing.description %> </p>
+								<br>
+								<%= button_to destroy_users_writing_path(writing), :class => "btn btn-warning", method: :delete do %>
+								Delete
+								<%end%>
+								</li>
+								</ul>
+								<% end %>
+								<% end %>
+
+                <% if @user.person == "Writer" %> 
+                <% if current_user == @user %>
+                   <!--new button to create a new post-->
+                   <div class = "centered">
+                <%= button_to new_writing_path, :class => "btn btn-info", method: "get" do %> Add a New Writing Post 
+									<%end%>
+									</div>
+                <% elsif current_user == @user %>
+                <p> You must be registered as a writer to post writings </p>
+                <% else %>
+                    <% end %>
+                    <% end %>
+             
+								</div>
+
+
+
+									
+								
+
+                </div>

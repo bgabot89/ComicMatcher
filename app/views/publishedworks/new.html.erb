@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <h1 class="jumbotron-text">New Published Work Form</h1>
+</div>
+
+<div class="container">
+<%= form_for :publishedwork do |f| %>
+         Name: <%= f.text_field :name, placeholder: "Name" %>
+    <br>
+    <div class = "input-group">
+    Description: <%= f.text_field :description, placeholder: "Description" %>
+    </div>
+    <br>
+    <div class = "text-field">
+    Writer: <%= f.text_field :url, placeholder: "Writer" %>
+    </div>
+    <br>
+     <div class = "text-field">
+    Artist: <%= f.text_field :url, placeholder: "Artist" %>
+    </div>
+    <br>
+    <div class = "text-field">
+    URL: <%= f.text_field :url, placeholder: "Url of Comic" %>
+    </div>
+    <br>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+</div>

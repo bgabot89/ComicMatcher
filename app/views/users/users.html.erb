@@ -1,0 +1,12 @@
+<!-- app/views/users/users.html.erb` -->
+
+<% @users.each do |user| %>
+
+    <div>
+        Name: <%= user.username %> <br>
+        First Name: <%=  user.first_name %>
+    </div>
+
+<p><%= button_to "Log out",  logout_path, method: "destroy" %> </p>
+
+<% end %>

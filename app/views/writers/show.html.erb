@@ -1,0 +1,16 @@
+<div class="jumbotron">
+  <h1 class="jumbotron-text">List of Writers</h1>
+</div>
+
+
+<% @users.each do |writer| %>
+<% if writer.person == "Writer" %>
+<div>
+<ul>
+<li class="text-art">
+<%= link_to writer.username, user_path(writer) %>
+</li>
+</ul>
+</div>
+<% end %>
+<% end %>

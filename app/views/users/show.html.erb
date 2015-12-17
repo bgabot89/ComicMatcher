@@ -1,0 +1,105 @@
+<div class="jumbotron">
+  <h1 class="jumbotron-text"><%= @user.username %>'s Profile</h1>
+</div>
+
+
+<!--Navbar -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container">
+
+		
+	<div class="row">
+		
+		<div class="col-md-12"> 
+				
+			<div class="panel panel-default">
+			
+                <div class="panel-heading">
+               
+                    <span class="panel-title">
+					
+						<div class="pull-left">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="" data-toggle="tab">Profile</a></li>
+								<li><a href="/users/<%= @user.id%>/gallery"><i class="glyphicon glyphicon-picture"></i> Gallery</a></li>
+								<li><a href="/users/<%= @user.id%>/writings"><i class="glyphicon glyphicon-pencil"></i> Writings</a></li>
+							</ul>
+						</div>
+						
+                            <div class="btn-group pull-right">
+                                    <% if current_user == @user %>    
+                                    <%= button_to edit_user_path(@user), :class => "btn btn-default dropdown-toggle", method: "get" do %> Settings <i class="glyphicon glyphicon-cog"></i>
+                                    <%end%>
+                                    <%end%>
+                                <ul class="dropdown-menu" style="width:300px; padding:0px;">
+            						
+										<li>
+											    
+
+												    <div class="panel panel-default" id="preferences" style="margin:0px;">
+											   
+									    <div class="panel-body">
+						
+    										<div class="form-group">
+											
+											</div>
+	 
+										</div>
+													
+							
+													
+												</div>
+											
+										</li>
+									</ul>
+
+                          
+                            </div>
+						
+						<div class="clearfix"></div>
+
+					</span>
+					
+				</div>
+
+                <div class="panel-body">
+						<!--Insert Panel content here-->
+
+					 <%= image_tag @user.avatar.url(:thumb) %>
+						<br>
+    		    Name: <%= @user.first_name %> <%= @user.last_name %>
+<br>
+Age: <%= @user.age %> 
+<br>
+Writer or Artist: <%= @user.person %> 
+<br>
+Email: <%= @user.email %> 
+<br>
+<div class="hidden">
+Gender: <%= @user.sex %> 
+</div>
+<p>About: <%= @user.about %> </p>
+
+<p>Technologies Used: <%= @user.tech %> </p>
+
+<% if current_user != @user %> 
+<p> Interested in collaborating with <%=@user.first_name %>? Send a request email to get in contact with them. </p>
+<%= button_to connect_path(@user), :class => "btn btn-info", method: :post, data: { confirm: "Do you want to send a request to this user?" } do %> Contact <i class="glyphicon glyphicon-envelope"></i>
+<%end%>
+<%end%>
+
+
+                </div>
+				
+            </div>
+			
+		</div>
+		
+    </div>
+
+</div>
+                                    
+                          
+
+
