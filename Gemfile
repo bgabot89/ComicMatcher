@@ -39,7 +39,7 @@ gem "figaro"
 
 gem 'rails_12factor'
 
-ruby '2.0.0'
+ruby '2.2.1'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
