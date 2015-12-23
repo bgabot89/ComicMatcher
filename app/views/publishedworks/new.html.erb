@@ -3,6 +3,10 @@
 </div>
 
 <div class="container">
+<div class="row">
+<form role="form">
+<div class="col-lg-10">
+<br>
 <%= form_for :publishedwork, url: "/publishedworks", method: "post" do |f| %>
          Name: <%= f.text_field :name, placeholder: "Name" %>
     <br>
@@ -24,4 +28,7 @@
     <br>
     <%= f.submit "Submit", class: "btn btn-primary" %>
     <% end %>
+    </div>
+    </div>
+    </form>
 </div>

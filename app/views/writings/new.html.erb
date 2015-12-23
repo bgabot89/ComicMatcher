@@ -12,16 +12,24 @@
 	   <div class="form-group">
       	<%= f.hidden_field :user_id, :value => "#{@user.id}" %>
       </div>
+      <label class="Name">
     Name: <%= f.text_field :name, placeholder: "Name" %>
+    </label>
     <div class = "form-group">
     <div class="row">
-    <div class="col-lg-3" id="synopsis"> Synopsis: </div>
+    <div class="col-lg-3" id="synopsis"> <strong>Synopsis:</strong> </div>
     <div class="divvy col-lg-7">
-    <%= f.text_area :description, class: "form-control1", placeholder: "Description" %>
+   
+    
+    <%= f.text_area :description, class: "form-control1", id: "textinput", placeholder: "Description" %>
+
     </div>
     </div>
     </div>
     </div>
+    <div class="char">
+     Remaining characters: <span id="count"></span>
+     </div> 
     <br>
     <div class="centered">
     <div class="form-group">

@@ -109,3 +109,11 @@ background-color: #3E91CF;
 #jbheight2 {
 	background: url('/images/pencil.png');
 }
+
+.char {
+	text-align: center;
+}
+
+.Name {
+    margin-bottom: 20px;
+}

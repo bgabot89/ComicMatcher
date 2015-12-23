@@ -20,10 +20,20 @@
 
 $(document).ready(function() {
 	console.log("Doc has been loaded");
-	 $('#checkbox1').change(function(){
-        if(this.checked)
-            $('#hidden').show();
-       
-	 });
+	var maxchar = 300;
+var i = document.getElementById("textinput");
+var c = document.getElementById("count");
+c.innerHTML = maxchar;
+    
+i.addEventListener("keydown",count);
+
+function count(e){
+    var len =  i.value.length;
+    if (len >= maxchar){
+       e.preventDefault();
+    } else{
+       c.innerHTML = maxchar - len-1;   
+    }
+}
 	});
 
