@@ -3,7 +3,7 @@
 </div>
 
 <div class="container">
-<%= form_for :publishedwork do |f| %>
+<%= form_for :publishedwork, url: "/publishedworks", method: "post" do |f| %>
          Name: <%= f.text_field :name, placeholder: "Name" %>
     <br>
     <div class = "input-group">

@@ -43,6 +43,7 @@ get "/users/:id/drawings/new", to: "users#newDraw", as: "draw"
 
 
 
+
 # # commenting out for now - old writNew routes
 # get "/users/:id/writings/edit", to: "users#writNew"
 

@@ -115,18 +115,18 @@ def newDraw
   #test for update
       user_id = params[:id]
       @user = User.find(user_id)
-      updated_attributes = params.require(:user).permit(:about, :tech, :avatar, :image)
-    if @user.update_attributes(updated_attributes)
+      # updated_attributes = params.require(:user).permit(:about, :tech, :avatar, :image)
+    # if @user.update_attributes(updated_attributes)
         if params[:images]
           # The magic is here ;)
           params[:images].each { |image|
             @user.drawings.create(image: image)
           }
-          # redirect_to @user
+          redirect_to @user
         end
-    redirect_to @user
-  end
-   render :newDraw 
+    # redirect_to @user
+  # end
+   # render :newDraw 
 end
 
 # destroy writings
