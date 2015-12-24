@@ -117,3 +117,18 @@ background-color: #3E91CF;
 .Name {
     margin-bottom: 20px;
 }
+
+#pubform {
+	text-align: center;
+}
+
+a:hover {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+ul
+{
+    list-style-type: none;
+}

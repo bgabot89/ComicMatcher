@@ -19,7 +19,7 @@ get "/artists", to: "artists#show"
 
 get "/writers", to: "writers#show"
 
-post "/publishedworks/new"
+# post "/publishedworks/new"
 
 # get "/gallery/:user_id", to: "gallery#show"
 

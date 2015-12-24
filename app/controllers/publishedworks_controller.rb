@@ -13,6 +13,7 @@ class PublishedworksController < ApplicationController
 		if @publishedwork.save 
 			redirect_to publishedworks_path
     else
+    	p @publishedwork
       redirect_to new_published_work_path
 		end
 	end
