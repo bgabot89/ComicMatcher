@@ -67,9 +67,8 @@
 								<br>
 								Description: <p class="description"> <%= writing.description %> </p>
 								<br>
-								<%= button_to destroy_users_writing_path(writing), :class => "btn btn-warning", method: :delete do %>
-								Delete
-								<%end%>
+								<%= button_to edit_writing_path(writing), :class => "btn btn-info", method: :get do %> Edit <% end %>
+
 								</li>
 								</ul>
 								<% end %>
