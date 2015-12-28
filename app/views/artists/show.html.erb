@@ -5,9 +5,9 @@
 <% @users.each do |artist| %>
 <% if artist.person == "Artist" %>
 <div>
-<ul>
+<ul.a>
 <li class="text-art">
-<%= link_to artist.username, user_path(artist) %>
+<%= link_to artist.username, user_path(artist), :class => "Artist-list" %>
 </li>
 </ul>
 </div>
