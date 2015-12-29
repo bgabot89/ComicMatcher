@@ -19,7 +19,7 @@ get "/artists", to: "artists#show"
 
 get "/writers", to: "writers#show"
 
-post "/publishedworks/new"
+# post "/publishedworks/new"
 
 # get "/gallery/:user_id", to: "gallery#show"
 
@@ -39,6 +39,7 @@ post "/users/:id/connect", to: "users#connect", as: "connect"
 get "/request", to: "users#sendReq", as: "request"
 
 get "/users/:id/drawings/new", to: "users#newDraw", as: "draw"
+
 
 
 

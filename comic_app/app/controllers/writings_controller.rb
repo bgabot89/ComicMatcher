@@ -14,9 +14,17 @@ class WritingsController < ApplicationController
 		@writing = Writing.new
 	end
 
+  def edit
+    @writing = Writing.find(params[:id])
+  end
+
 	def update
 		@user = User.find(params[:id])
-		@writing = Writing.find(params[:id])
+		writing = Writing.find(params[:id])
+    if current_user.writings.include? writing
+      writing.update_attributes(writing_params)
+      redirect_to user_path(current_user)
+    end
 	end
 
  def create 
@@ -32,12 +40,13 @@ class WritingsController < ApplicationController
 
   def destroy
     @user = User.find(session[:user_id])
+    id = params[:id]
   
-  #   writing = Writing.find(id)
-  #   if current_user.writings.include? writing
-  #     writing.destroy
-  #     redirect_to user_path(@user)
-  # end
+    writing = Writing.find(id)
+    if current_user.writings.include? writing
+      writing.destroy
+      redirect_to user_path(@user)
+  end
 end
 
 private

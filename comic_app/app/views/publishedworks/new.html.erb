@@ -2,20 +2,23 @@
   <h1 class="jumbotron-text">New Published Work Form</h1>
 </div>
 
-<div class="container">
-<%= form_for :publishedwork do |f| %>
+<div class="container" id="pubwork">
+<div class="row">
+<div class="col-lg-10">
+<br>
+<%= form_for :publishedwork, url: "/publishedworks", method: "post" do |f| %>
          Name: <%= f.text_field :name, placeholder: "Name" %>
     <br>
-    <div class = "input-group">
-    Description: <%= f.text_field :description, placeholder: "Description" %>
+    <div class = "text-field">
+    Description: <%= f.text_area :description, placeholder: "Description" %>
     </div>
     <br>
     <div class = "text-field">
-    Writer: <%= f.text_field :url, placeholder: "Writer" %>
+    Writer: <%= f.text_field :writer, placeholder: "Writer" %>
     </div>
     <br>
      <div class = "text-field">
-    Artist: <%= f.text_field :url, placeholder: "Artist" %>
+    Artist: <%= f.text_field :artist, placeholder: "Artist" %>
     </div>
     <br>
     <div class = "text-field">
@@ -24,4 +27,6 @@
     <br>
     <%= f.submit "Submit", class: "btn btn-primary" %>
     <% end %>
+    </div>
+    </div>
 </div>

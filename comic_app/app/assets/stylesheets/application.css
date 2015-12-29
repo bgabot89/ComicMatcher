@@ -38,13 +38,6 @@
 	margin-top: 70px;
 }
 
-.jumbotron-text2 {
-	font-family: Arial;
-	text-indent: 350px;
-	margin-bottom:10px;
-	margin-top: 70px;
-}
-
 .jumbotron {
 	  margin-bottom: 0px;
   height: 200px;
@@ -53,6 +46,15 @@
 }
 .text-art {
 	font-size: 20px	;
+	background-color:#80ccff;
+	padding: 30px;
+	margin-left: 20px;
+	margin-right: 20px;
+	list-style-type: none;
+}
+
+.Artist-list{
+	font-color:white;
 }
 
 #home-text{
@@ -80,7 +82,7 @@
 }
 
 #submit-button {
-	padding-bottom: 10px
+	padding-bottom: 10px;
 	border: 3px solid black;
 }
 
@@ -94,14 +96,6 @@
 	text-align:center;
 }
 
-.card-content{
-	border: 3px solid black;
-}
-
-.mdl-card__media {
-background-position
-
-}
 .navbar-inverse.navbar {
 background-color: #3E91CF;
 }
@@ -116,4 +110,42 @@ background-color: #3E91CF;
 
 #jbheight2 {
 	background: url('/images/pencil.png');
+}
+
+.char {
+	text-align: center;
+}
+
+.Name {
+    margin-bottom: 20px;
+}
+
+#pubform {
+	text-align: center;
+}
+
+a:hover {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+#collabjumb {
+		background: url('/images/LOGO.png');
+		background-repeat: no-repeat;
+		margin-top:80px;
+		background-size: 1200px;
+		background-position: 50px 30px;
+}
+
+.jumbotron-text2 {
+	font-family: Arial;
+	text-indent: 350px;
+	margin-bottom:10px;
+	margin-top: 70px;
 }

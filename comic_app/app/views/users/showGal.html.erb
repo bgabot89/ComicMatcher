@@ -64,19 +64,32 @@
 
                 <div class="panel-body">
                 <div class="centered">
-                   <%= button_to draw_path, :class => "btn btn-info", method: "get" do %> Add a New Drawing Post 
+                <% if current_user == @user %>
+                   <%= button_to edit_user_path, :class => "btn btn-info", method: "get" do %> Add a New Drawing Post 
 									<%end%>
+									<% end %>
                 </div>
 
                 <!--trying to render drawing from each user -->
 				<% if @user.person == "Artist" %>
 				<div class="row">
   <ul class="thumbnails files">
+
+  <!--for brian -->
+  <% if @user.email == "bgabot89@gmail.com" %>
+  <div class="thumbnail">
+ 	<img src="/images/ahri-ai.png"> 
+ 	</div>
+	<div class="thumbnail">
+ 	<img src="/images/Soonsmall.png"> 
+ 	</div>
+ 	<% end %>
   <% @drawings.each do |pic| %>
     <li class="span3" id="drawing_<%= pic.id %>">
     <div class="thumbnail">
       <%= image_tag pic.image.url %>
       <div class="caption">
+      
         <p style="text-align: center;">
 				
         </p>
