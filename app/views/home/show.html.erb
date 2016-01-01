@@ -1,12 +1,28 @@
+<div class="container">
 <div class="jumbotron" id="collabjumb">
-  <h1 class="jumbotron-text2"></h1>
+  <h1 class="jumbotron-text2">Collab-A-Comic</h1>
+  <p> Find writers </p>
+</div>
 </div>
 
 
-<div class="jumbotron" id="jbheight">
-  <h1 class="jumbotron-text2" id="font-jb"><%= link_to "Find a Writer", writers_path %></h1>
+<%= link_to artists_path do %>
+ <div class="main-wrapper">
+<i class="material-icons">brush</i>
+<h1 class="icon-text" id="artist-text"> Find an Artist</h1>
 </div>
+<% end %>
 
-<div class="jumbotron" id="jbheight2">
-  <h1 class="jumbotron-text2" id="font-jb"><%= link_to "Find an Artist", artists_path %></h1>
+<%= link_to writers_path do %>
+<div class="main-wrapper2">
+<i class="material-icons" id="pen">edit</i>
+<h1 class="icon-text"> Find a Writer</h1>
 </div>
+<% end %>
+
+<%= link_to publishedworks_path do %>
+<div class="main-wrapper3">
+<i class="material-icons" id="book">import_contacts</i>
+<h1 class="icon-text"> Read a Comic</h1>
+</div>
+<%end%>

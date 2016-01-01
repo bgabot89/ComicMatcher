@@ -8,7 +8,11 @@
 <div>
 <ul.a>
 <li class="text-art">
-<%= link_to writer.username, user_path(writer) %>
+<div class="plus">+</div>
+<h4><%= link_to writer.username, user_path(writer) %><h4>
+<div>
+<p1><%= writer.about %><p1>
+</div>
 </li>
 </ul>
 </div>

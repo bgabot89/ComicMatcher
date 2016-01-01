@@ -4,9 +4,10 @@
 <body>
 
 <div class="centered">
+<% if current_user %>
 <%= button_to "Publish a Comic", new_publishedwork_path, class: "btn btn-primary", method: :get%>  
+<% end %>
 <% @publishedworks.each do |f|%>
-
 <br>
 Name:
 <%= f.name %>

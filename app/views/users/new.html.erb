@@ -1,13 +1,11 @@
-<div class="jumbotron">
-  <h1 class="jumbotron-text">Sign Up</h1>
-</div>
-
 <%= form_for :user, url: "/users", method: "post" do |f| %>
 <div class="container">
+<div class="sign-up">
     <div class="row">
         <form role="form">
             <div class="col-lg-6">
-                <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
+            <h3> Sign Up </h3>
+               
                 <div class="form-group">
                     <label for="InputName">Enter Username*</label>
                     <div class="input-group">
@@ -61,12 +59,15 @@
                 <br>
                  <%= f.select :sex, options_for_select([["Male", "Male"], ["Female", "Female"]]) %>
                  <br>
+                 <div class= "asterisk"><strong>* Required Field</strong></div>
                  <div class="Sign-up">
                 <%= f.submit "Sign Up", class: "btn btn-info" %>
                 <div>
 
+
             </div>
         </form>
+    </div>
     </div>
 </div>
 <%end%>

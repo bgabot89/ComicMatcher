@@ -67,8 +67,9 @@
 								<br>
 								Description: <p class="description"> <%= writing.description %> </p>
 								<br>
+								 <% if current_user == @user %>
 								<%= button_to edit_writing_path(writing), :class => "btn btn-info", method: :get do %> Edit <% end %>
-
+								<% end %>
 								</li>
 								</ul>
 								<% end %>
