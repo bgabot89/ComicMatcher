@@ -8,6 +8,25 @@
 <form role ="form">
 <div class="col-lg-10">
 	  <br>
+
+       <div class="form-group">
+                    <label for="InputFirst">First Name</label>
+                    <div class="input-group">
+                             <%= f.text_field :first_name, placeholder: "First Name" do %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <% end %>
+                <br>
+                 <div class="form-group">
+                    <label for="InputLast">Last Name</label>
+                    <div class="input-group">
+                             <%= f.text_field :last_name, placeholder: "Last Name" do %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <% end %>
+
 	  <div class="form-group">
     About: <%= f.text_area :about, class: "form-control1", placeholder: "About" %>
     </div>

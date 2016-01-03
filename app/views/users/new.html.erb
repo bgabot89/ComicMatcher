@@ -5,15 +5,15 @@
         <form role="form">
             <div class="col-lg-6">
             <h3> Sign Up </h3>
-               
                 <div class="form-group">
                     <label for="InputName">Enter Username*</label>
                     <div class="input-group">
-                        <%= f.text_field :username, placeholder: "Username" do %> Enter Username
+                        <%= f.text_field :username, placeholder: "Username" do %> 
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span> 
                     </div>
                 </div>
                 <%end%>
+                <br>
                 <div class="form-group">
                     <label for="InputEmail">Enter Email*</label>
                     <div class="input-group">
@@ -23,7 +23,7 @@
                 </div>
                 <%end%>
                 <div class="form-group">
-                    <label for="InputEmail">First Name</label>
+                    <label for="InputFirst">First Name</label>
                     <div class="input-group">
                              <%= f.text_field :first_name, placeholder: "First Name" do %>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
@@ -31,7 +31,7 @@
                 </div>
                 <% end %>
                    <div class="form-group">
-                    <label for="InputEmail">Last Name</label>
+                    <label for="InputLast">Last Name</label>
                     <div class="input-group">
                              <%= f.text_field :last_name, placeholder: "Last Name" do %>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>

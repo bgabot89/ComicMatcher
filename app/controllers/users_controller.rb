@@ -51,6 +51,8 @@ class UsersController < ApplicationController
     render :showWrit
   end
 
+
+  #method for creating new user
 	def create
 		@user = User.new(user_params)
     p user_params
@@ -58,6 +60,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
 			redirect_to user_path(@user)
     else
+      flash[:error] = user.errors.full_messages
       redirect_to sign_up_path
 		end
 
@@ -90,7 +93,7 @@ class UsersController < ApplicationController
   		#test for update
   		user_id = params[:id]
   		@user = User.find(user_id)
-  		updated_attributes = params.require(:user).permit(:about, :tech, :avatar, :image)
+  		updated_attributes = params.require(:user).permit(:first_name, :last_name, :about, :tech, :avatar, :image)
   	if @user.update_attributes(updated_attributes)
         if params[:images]
           # The magic is here ;)
