@@ -4,16 +4,18 @@
 
 <% @users.each do |artist| %>
 <% if artist.person == "Artist" %>
+<%= link_to user_path(artist) do %>
 <div>
 <ul.a>
 <li class="text-art">
 <div class="plus">+</div>
-<h4><%= link_to artist.username, user_path(artist), :class => "Artist-list" %><h4>
+<h4><strong><%= artist.username %></strong><h4>
 <div>
 <p1><%= artist.about %><p1>
 </div>
 </li>
 </ul>
 </div>
+<% end %>
 <% end %>
 <% end %>

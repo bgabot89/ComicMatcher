@@ -5,16 +5,18 @@
 
 <% @users.each do |writer| %>
 <% if writer.person == "Writer" %>
+<%= link_to user_path(writer) do %>
 <div>
 <ul.a>
-<li class="text-art">
+<li class="text-art2">
 <div class="plus">+</div>
-<h4><%= link_to writer.username, user_path(writer) %><h4>
+<h4><strong> <%= writer.username %> </strong></h4>
 <div>
 <p1><%= writer.about %><p1>
 </div>
 </li>
 </ul>
 </div>
+<% end %>
 <% end %>
 <% end %>

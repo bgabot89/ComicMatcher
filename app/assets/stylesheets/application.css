@@ -282,6 +282,11 @@ i.material-icons:nth-of-type(2) {
 	margin:2px;
 }
 
+.form-group2 {
+	background: white;
+	border-radius: 3px;
+}
+
 h2 {
 	margin:1px;
 	width:300px;
@@ -342,13 +347,28 @@ p1 {
 
 .text-art {
 	font-size: 20px	;
-	background-color:#80ccff;
+	background-color:#ffe5ff;
 	padding: 30px;
 	margin: 10px 20px 0px 20px;
 	list-style-type: none;
 	border-top: 1px solid white;
 }
 
+.text-art:hover {
+	background-color:#ffccff;
+}
+.text-art2 {
+	font-size: 20px	;
+	background-color:#ccffcc;
+	padding: 30px;
+	margin: 10px 20px 0px 20px;
+	list-style-type: none;
+	border-top: 1px solid white;
+}
+
+.text-art2:hover {
+	background-color:#99ff99;
+}
 .pub-container{
 	background: white;
 	border-radius: 3px;
@@ -365,8 +385,15 @@ label[for=InputName]
 	margin-left: 2px;
 }
 
-.navbar-inverse{
-color: white;
+.navbar-inverse .navbar-nav>li>a {
+    color:white;
 }
 
+.navbar-inverse .navbar-nav>li>a:hover {
+    text-decoration: underline;
+}
+
+.navbar-inverse .navbar-brand {
+	color:white;
+}
 

@@ -58,9 +58,10 @@ class UsersController < ApplicationController
     p user_params
 		if @user.save 
       session[:user_id] = @user.id
+      flash[:success] = "Successfully created user"
 			redirect_to user_path(@user)
     else
-      flash[:error] = user.errors.full_messages
+      flash[:error] = @user.errors.full_messages
       redirect_to sign_up_path
 		end
 

@@ -14,7 +14,8 @@ class PublishedworksController < ApplicationController
 			redirect_to publishedworks_path
     else
     	p @publishedwork
-      redirect_to new_published_work_path
+    	flash[:error] = @publishedwork.errors.full_messages
+      redirect_to new_publishedwork_path
 		end
 	end
 

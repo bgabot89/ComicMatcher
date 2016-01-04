@@ -1,8 +1,7 @@
 
 <div class="login-container">
 <h2> Published Work Form </h2>
-<div class="form-group">
-
+<div class="form-group2">
             <%= form_for :publishedwork, url: "/publishedworks", method: "post" do |f| %>
 
                 <div class="form">
@@ -11,25 +10,21 @@
                     <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
                 </div>
                 <div class="form">
-                <br>
                 <label for="pass"> Description </label>
                 <%= f.text_area :description, class: "form-control", placeholder: "Description"%>
-                </div><br>
+                </div>
                 <div class="form">
                  <label for="writer">Writer</label>
                     <%= f.text_field :writer, class: "form-control", placeholder: "Writer" %>
                 </div>
-                <br>
                 <div class="form">
                  <label for="login">Artist</label>
                     <%= f.text_field :artist, class: "form-control", placeholder: "Artist" %>
                 </div>
-                <br>
                 <div class="form">
                  <label for="url">Url</label>
                     <%= f.text_field :url, class: "form-control", placeholder: "Url" %>
                 </div>
-                <br>
 
                 <div class="login-button">
                 <%= f.submit "Submit", :class => "btn btn-info" %>
