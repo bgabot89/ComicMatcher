@@ -20,14 +20,15 @@
 
  h1 {
  	color:green;
+
  }
 
 .icon-text{
-	float:right;
-	padding: 20px;
-	margin-right: 550px;
-	font-size: 50px;
-}
+float:right;
+    padding: 20px;
+    margin-right: 550px;
+    font-size: 50px;
+	}
  body {
  	background-color: #ffc166;
  }
@@ -78,6 +79,12 @@
 
 .centered {
 	text-align:center;
+}
+
+.borderpub {
+	background-color:white;
+	margin: 0px 400px 20px 400px;
+	border-radius:5px;
 }
 
 #synopsis {
@@ -138,9 +145,25 @@ ul
     list-style-type: none;
 }
 
+.container {
+	position: relative;
+	margin: auto;
+
+}
+
+/* font for main page */
+.jumbotron-text2 {	
+	font-family: 'Bangers';
+	text-indent: 220px;
+	margin-top: 30px;
+}
+
+.jumbotron h1 {
+	font-size: 100px;
+}
+
 #collabjumb {
-		background: url('/images/LOGO.png');
-		background-repeat: no-repeat;
+	background-color: orange;
 		margin-top:80px;
 		background-size: 1200px;
 		background-position: 50px 30px;
@@ -148,17 +171,8 @@ ul
 
 }
 
-.container {
-	position: relative;
-	margin: auto;
+/* end */
 
-}
-.jumbotron-text2 {
-	font-family: Arial;
-	text-indent: 350px;
-	margin-bottom:10px;
-	margin-top: 70px;
-}
 .main-wrapper {
 		border-radius: 4px;
 		background-color: #ffe5ff;
@@ -300,7 +314,7 @@ h2 {
 .login-container {
 	left: 25%;
 	position: fixed;
-	margin:100px;
+	margin:150px;
 }
 
 .panel-heading{
@@ -318,7 +332,7 @@ h2 {
 
 .sign-up {
 	margin-top: 100px;
-	margin-left: 300px;
+	margin-left: 450px;
 }
 
 h3 {
@@ -397,3 +411,38 @@ label[for=InputName]
 	color:white;
 }
 
+.panel-default>.panel-heading {
+	background-color:#009688;
+}
+
+.active {
+	border: white solid 3px;
+	height:40px;
+}
+
+.inactive:hover {
+	background-color:#99ff99;
+
+}
+.inactive {
+	height:40px;
+
+}
+.nav-tabs{
+margin:30px 0px 0px 0px;
+}
+
+.login-page{
+background: url('/images/swirl2.png') no-repeat center center fixed;
+}
+
+.signuppage {
+	background: url('/images/signup.png') no-repeat fixed;
+	 background-position: left;
+
+}
+
+
+.publist{
+	border-bottom:solid 1px black;
+}
