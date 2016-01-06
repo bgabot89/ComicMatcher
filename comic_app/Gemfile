@@ -17,6 +17,9 @@ gem 'therubyracer', platforms: :ruby
 #requires bootstrap
 gem 'less-rails-bootstrap'
 
+#used for bootstrap flash errors
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

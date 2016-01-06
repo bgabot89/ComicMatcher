@@ -20,6 +20,17 @@
 
  h1 {
  	color:green;
+
+ }
+
+.icon-text{
+float:right;
+    padding: 20px;
+    margin-right: 550px;
+    font-size: 50px;
+	}
+ body {
+ 	background-color: #ffc166;
  }
 
 .form-control1 {
@@ -44,14 +55,7 @@
   color: white;
   text-shadow: black 0.3em 0.3em 0.3em;
 }
-.text-art {
-	font-size: 20px	;
-	background-color:#80ccff;
-	padding: 30px;
-	margin-left: 20px;
-	margin-right: 20px;
-	list-style-type: none;
-}
+
 
 .Artist-list{
 	font-color:white;
@@ -75,6 +79,12 @@
 
 .centered {
 	text-align:center;
+}
+
+.borderpub {
+	background-color:white;
+	margin: 0px 400px 20px 400px;
+	border-radius:5px;
 }
 
 #synopsis {
@@ -135,17 +145,304 @@ ul
     list-style-type: none;
 }
 
+.container {
+	position: relative;
+	margin: auto;
+
+}
+
+/* font for main page */
+.jumbotron-text2 {	
+	font-family: 'Bangers';
+	text-indent: 220px;
+	margin-top: 30px;
+}
+
+.jumbotron h1 {
+	font-size: 100px;
+}
+
 #collabjumb {
-		background: url('/images/LOGO.png');
-		background-repeat: no-repeat;
+	background-color: orange;
 		margin-top:80px;
 		background-size: 1200px;
 		background-position: 50px 30px;
+		width: 95%;
+
 }
 
-.jumbotron-text2 {
-	font-family: Arial;
-	text-indent: 350px;
-	margin-bottom:10px;
-	margin-top: 70px;
+/* end */
+
+.main-wrapper {
+		border-radius: 4px;
+		background-color: #ffe5ff;
+		padding: 10px;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		position: relative;
+		width:85%;
+  	margin:66px;
+	}
+.main-wrapper:hover{
+	transform: scale(1.05);
+
+}
+
+.main-wrapper:hover > i.material-icons{
+	
+		transform: rotate(20deg);
+		cursor: pointer;
+		box-shadow: none;
+
+}
+
+
+#book{
+	background-color: #4d88ff
+}
+	.main-wrapper2 {
+		border-radius: 4px;
+		background-color: #ccffcc;
+		padding: 10px;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		position: relative;
+		width:85%;
+  	margin:66px;
+	}
+
+
+.main-wrapper2:hover{
+	transform: scale(1.05);
+
+}
+
+.main-wrapper3:hover > i.material-icons{
+	
+		transform: scale(1.05);
+		cursor: pointer;
+		box-shadow: none;
+
+}
+
+
+.main-wrapper3 {
+		border-radius: 4px;
+		background-color: #80aaff;
+		padding: 10px;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		position: relative;
+		width:85%;
+  	margin:66px;
+	}
+
+.main-wrapper3:hover{
+	transform: scale(1.05);
+
+}
+
+
+.main-wrapper2:hover > i.material-icons{
+	
+		transform: rotate(20deg);
+		cursor: pointer;
+		box-shadow: none;
+}
+
+	i.material-icons {
+		font-size: 10rem;
+		color: white;
+		position: relative;
+		border-radius: 50%;
+		padding: 20px;
+		margin: 3px;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+		transition: color 0.2s ease, background-color 0.2s ease, transform 0.3s ease;
+}
+
+#pen {
+	background-color: #80ff80;
+}
+
+	i.material-icons:after {
+			content: "";
+			width: 100%;
+			height: 100%;
+			border: solid 5px;
+			transform: scale(0.8);
+			position: absolute;
+			top: -2px;
+			left: -2px;
+			border-radius: 50%;
+			transition: all 0.3s ease;
+	}
+
+i.material-icons:hover:after {
+		transform: scale(1);
+		box-shadow: 10px 0 20px rgba(0, 0, 0, 0.19), 6px 0 6px rgba(0, 0, 0, 0.23);
+}
+
+i.material-icons:nth-of-type(1) {
+		background-color: #d59acb;
+}
+
+i.material-icons:nth-of-type(2) {
+		background-color: #33ffad;
+}
+
+/* Login form css */
+
+.form-group {
+	background: white;
+	border-radius: 3px;
+	margin:2px;
+}
+
+.form-group2 {
+	background: white;
+	border-radius: 3px;
+}
+
+h2 {
+	margin:1px;
+	width:300px;
+	background-color:red;
+	border-radius: 3px;
+	color:white;
+	font-size: 30px;
+	padding:5px;
+}
+
+.login-container {
+	left: 25%;
+	position: fixed;
+	margin:150px;
+}
+
+.panel-heading{
+	background-color: green;
+}
+
+.form {
+	width:200px;
+	padding:10px;
+}
+
+.login-button{
+	margin:5px;
+}
+
+.sign-up {
+	margin-top: 100px;
+	margin-left: 450px;
+}
+
+h3 {
+		background-color:red;
+	border-radius: 3px;
+	color:white;
+	padding: 5px;
+	margin: 1px;
+	font-size: 30px;
+}
+
+.asterisk {
+	margin: 5px;
+	border: solid black 2px;
+}
+
+.plus {
+	float:left;
+	margin: 10px 15px 0 0;
+}
+
+p1 {
+	font-size: 15px;
+}
+
+
+.text-art {
+	font-size: 20px	;
+	background-color:#ffe5ff;
+	padding: 30px;
+	margin: 10px 20px 0px 20px;
+	list-style-type: none;
+	border-top: 1px solid white;
+}
+
+.text-art:hover {
+	background-color:#ffccff;
+}
+.text-art2 {
+	font-size: 20px	;
+	background-color:#ccffcc;
+	padding: 30px;
+	margin: 10px 20px 0px 20px;
+	list-style-type: none;
+	border-top: 1px solid white;
+}
+
+.text-art2:hover {
+	background-color:#99ff99;
+}
+.pub-container{
+	background: white;
+	border-radius: 3px;
+	margin:2px;
+}
+
+label[for=InputEmail]
+{
+	margin-left: 1px;
+}
+
+label[for=InputName]
+{
+	margin-left: 2px;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color:white;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    text-decoration: underline;
+}
+
+.navbar-inverse .navbar-brand {
+	color:white;
+}
+
+.panel-default>.panel-heading {
+	background-color:#009688;
+}
+
+.active {
+	border: white solid 3px;
+	height:40px;
+}
+
+.inactive:hover {
+	background-color:#99ff99;
+
+}
+.inactive {
+	height:40px;
+
+}
+.nav-tabs{
+margin:30px 0px 0px 0px;
+}
+
+.login-page{
+background: url('/images/swirl2.png') no-repeat center center fixed;
+}
+
+.signuppage {
+	background: url('/images/signup.png') no-repeat fixed;
+	 background-position: left;
+
+}
+
+
+.publist{
+	border-bottom:solid 1px black;
 }

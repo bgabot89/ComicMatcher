@@ -1,32 +1,35 @@
-<div class="jumbotron">
-  <h1 class="jumbotron-text">New Published Work Form</h1>
-</div>
 
-<div class="container" id="pubwork">
-<div class="row">
-<div class="col-lg-10">
-<br>
-<%= form_for :publishedwork, url: "/publishedworks", method: "post" do |f| %>
-         Name: <%= f.text_field :name, placeholder: "Name" %>
-    <br>
-    <div class = "text-field">
-    Description: <%= f.text_area :description, placeholder: "Description" %>
-    </div>
-    <br>
-    <div class = "text-field">
-    Writer: <%= f.text_field :writer, placeholder: "Writer" %>
-    </div>
-    <br>
-     <div class = "text-field">
-    Artist: <%= f.text_field :artist, placeholder: "Artist" %>
-    </div>
-    <br>
-    <div class = "text-field">
-    URL: <%= f.text_field :url, placeholder: "Url of Comic" %>
-    </div>
-    <br>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-    <% end %>
-    </div>
-    </div>
-</div>
+<div class="login-container">
+<h2> Published Work Form </h2>
+<div class="form-group2">
+            <%= form_for :publishedwork, url: "/publishedworks", method: "post" do |f| %>
+
+                <div class="form">
+                <br>
+                <label for="login">Name</label>
+                    <%= f.text_field :name, class: "form-control", placeholder: "Name" %>
+                </div>
+                <div class="form">
+                <label for="pass"> Description </label>
+                <%= f.text_area :description, class: "form-control", placeholder: "Description"%>
+                </div>
+                <div class="form">
+                 <label for="writer">Writer</label>
+                    <%= f.text_field :writer, class: "form-control", placeholder: "Writer" %>
+                </div>
+                <div class="form">
+                 <label for="login">Artist</label>
+                    <%= f.text_field :artist, class: "form-control", placeholder: "Artist" %>
+                </div>
+                <div class="form">
+                 <label for="url">Url</label>
+                    <%= f.text_field :url, class: "form-control", placeholder: "http://" %>
+                </div>
+
+                <div class="login-button">
+                <%= f.submit "Submit", :class => "btn btn-info" %>
+                </div>
+                <% end %> 
+
+        </div>
+        </div>
