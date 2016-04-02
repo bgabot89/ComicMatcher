@@ -20,7 +20,6 @@
 
  h1 {
  	color:#555fa6;
-
  }
 
 .icon-text{
@@ -62,7 +61,6 @@ float:right;
 
 #home-text{
 	text-align: center;
-
 }
 .card-body	 {
 	background-color:blue;
@@ -187,7 +185,6 @@ ul
 }
 
 .main-wrapper:hover > i.material-icons{
-
 		transform: rotate(20deg);
 		cursor: pointer;
 		box-shadow: none;
@@ -215,7 +212,6 @@ ul
 }
 
 .main-wrapper3:hover > i.material-icons{
-
 		transform: scale(1.05);
 		cursor: pointer;
 		box-shadow: none;
@@ -240,7 +236,6 @@ ul
 
 
 .main-wrapper2:hover > i.material-icons{
-
 		transform: rotate(20deg);
 		cursor: pointer;
 		box-shadow: none;
