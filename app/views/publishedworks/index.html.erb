@@ -2,35 +2,37 @@
   <h1 class="jumbotron-text" id="pubwork">Published Works</h1>
 </div>
 <body>
+<% if !current_user %>
+  <div class=text-center> <p> You're not logged in, please <%= link_to "login", login_path %> to your account or <%= link_to "signup", sign_up_path %> to post your comic up! </p> </div>
+  <% end %>
 
 <div class="centered">
-<div class="borderpub">
-<% if current_user %>
-<%= button_to "Publish a Comic", new_publishedwork_path, class: "btn btn-primary", method: :get%>  
-<% end %>
-<% @publishedworks.each do |f|%>
-<ul>
-<li class="publist">
-<br>
-Name:
-<%= f.name %>
-<br>
-Description:
-<%= f.description %>
-<br>
-Written by:
-<%= f.writer %>
-<br>
-Illustrated by:
-<%= f.artist %>
-<br>
-Link:
-<a href="http://<%= f.url %>"> <%= f.url %> </a>
-<br>
-</li>
-</ul>
-<%end%>
-</div>
+  <div class="borderpub">
+    <% if current_user %>
+      <%= button_to "Publish a Comic", new_publishedwork_path, class: "btn btn-primary", method: :get%>
+    <% end %>
+  <% @publishedworks.each do |f|%>
+    <ul>
+      <li class="publist">
+        <br>
+          Name:
+          <%= f.name %>
+        <br>
+  Description:
+    <%= f.description %>
+    <br>
+  Written by:
+  <%= f.writer %>
+    <br>
+  Illustrated by:
+  <%= f.artist %>
+    <br>
+  Link:
+    <a href="http://<%= f.url %>"> <%= f.url %> </a>
+    <br>
+  </li>
+    </ul>
+  <%end%>
+  </div>
 </div>
 </body>
-
