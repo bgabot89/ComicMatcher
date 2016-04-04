@@ -1,12 +1,44 @@
-<div class="jumbotron">
-  <h1 class="jumbotron-text" id="pubwork">Published Works</h1>
+<div class="jumb">
+  <img class = "image-bubble" src="/images/Collab_bubble_blue.png">
+  <h5> Published Works </h5>
 </div>
+
 <body>
 <% if !current_user %>
   <div class=text-center> <p> You're not logged in, please <%= link_to "login", login_path %> to your account or <%= link_to "signup", sign_up_path %> to post your comic up! </p> </div>
   <% end %>
 
-<div class="centered">
+
+  <% if current_user %>
+    <div class="text-center"> <%= button_to "Publish a Comic", new_publishedwork_path, class: "btn btn-primary", method: :get%> </div>
+  <% end %>
+
+  <!--Test new list -->
+
+  <% @publishedworks.each do |f|%>
+  <div>
+    <ul.a>
+      <li class="text-art3">
+        <div class="plus">+</div>
+          <h4><strong> Name: <%= f.name %> </strong></h4>
+        <div>
+          <p1> Description: <%= f.description %><p1>
+        </div>
+        <div>
+          <p1> Writer: <%= f.writer %><p1>
+        </div>
+        <div>
+          <p1> Artist: <%= f.artist %><p1>
+        </div>
+        <div>
+          <p1> URL link: <a href="http://<%= f.url %>"> <%= f.url %> </a> </p1>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <%end%>
+
+<!-- <div class="centered">
   <div class="borderpub">
     <% if current_user %>
       <%= button_to "Publish a Comic", new_publishedwork_path, class: "btn btn-primary", method: :get%>
@@ -35,4 +67,4 @@
   <%end%>
   </div>
 </div>
-</body>
+</body> -->

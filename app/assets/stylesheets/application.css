@@ -373,6 +373,20 @@ p1 {
 .text-art2:hover {
 	background-color:#99ff99;
 }
+
+.text-art3 {
+	font-size: 20px	;
+	background-color:#b0e2ff;
+	padding: 30px;
+	margin: 10px 20px 0px 20px;
+	list-style-type: none;
+	border-top: 1px solid white;
+}
+
+.text-art3:hover {
+	background-color:#bfe7ff;
+}
+
 .pub-container{
 	background: white;
 	border-radius: 3px;
@@ -519,4 +533,33 @@ background: url('/images/swirl2.png') no-repeat center center fixed;
 
 #logo {
   z-index: 5;
+}
+
+.jumbo {
+  margin: 10px;
+  position: relative;
+}
+
+
+.jumb {
+  margin-left: 300px;
+}
+
+h5 {
+  position: absolute;
+  top: 225px;
+  left:530px;
+  bottom: 350px;
+  z-index: 100;
+  font-size: 50px;
+  color: white;
+  font-family: Bangers;
+}
+
+.image-bubble {
+  position: relative;
+  left:100px;
+  top: 0;
+  width: 600px;
+
 }

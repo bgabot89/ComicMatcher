@@ -1,23 +1,25 @@
-<div class="jumbotron">
-  <h1 class="jumbotron-text"><%= @user.username %>'s Gallery</h1>
+<div class="jumb">
+  <img class = "image-bubble" src="/images/Collab_bubble_purple.png">
+  <h5> <%= @user.username %>'s Gallery</h5>
 </div>
+
 
 
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 <div class="container">
 
-		
+
 	<div class="row">
-		
-		<div class="col-md-12"> 
-				
+
+		<div class="col-md-12">
+
 			<div class="panel panel-default">
-			
+
                 <div class="panel-heading">
-               
+
                     <span class="panel-title">
-					
+
 						<div class="pull-left">
 							<ul class="nav nav-tabs">
 								<li class="inactive"><%= link_to "Profile", user_path(@user) %> </li>
@@ -25,47 +27,47 @@
 								<li class="inactive"><a href="/users/<%= @user.id%>/writings"><i class="glyphicon glyphicon-pencil"></i> Writings</a></li>
 							</ul>
 						</div>
-						
+
                             <div class="btn-group pull-right">
-                                    <% if current_user == @user %>    
+                                    <% if current_user == @user %>
                                     <%= button_to edit_user_path(@user), :class => "btn btn-default dropdown-toggle", method: "get" do %> Settings <i class="glyphicon glyphicon-cog"></i>
                                     <%end%>
                                     <%end%>
                                 <ul class="dropdown-menu" style="width:300px; padding:0px;">
-            						
+
 										<li>
-											    
+
 
 												    <div class="panel panel-default" id="preferences" style="margin:0px;">
-											   
+
 									    <div class="panel-body">
-						
+
     										<div class="form-group">
-											
+
 											</div>
-	 
+
 										</div>
-													
-							
-													
+
+
+
 												</div>
-											
+
 										</li>
 									</ul>
 
-                          
+
                             </div>
-						
+
 						<div class="clearfix"></div>
 
 					</span>
-					
+
 				</div>
 
                 <div class="panel-body">
                 <div class="centered">
                 <% if current_user == @user %>
-                   <%= button_to edit_user_path, :class => "btn btn-info", method: "get" do %> Add a New Drawing Post 
+                   <%= button_to edit_user_path, :class => "btn btn-info", method: "get" do %> Add a New Drawing Post
 									<%end%>
 									<% end %>
                 </div>
@@ -78,10 +80,10 @@
   <!--for brian -->
   <% if @user.email == "bgabot89@gmail.com" %>
   <div class="thumbnail">
- 	<img src="/images/ahri-ai.png"> 
+ 	<img src="/images/ahri-ai.png">
  	</div>
 	<div class="thumbnail">
- 	<img src="/images/Soonsmall.png"> 
+ 	<img src="/images/Soonsmall.png">
  	</div>
  	<% end %>
   <% @drawings.each do |pic| %>
@@ -89,9 +91,9 @@
     <div class="thumbnail">
       <%= image_tag pic.image.url %>
       <div class="caption">
-      
+
         <p style="text-align: center;">
-				
+
         </p>
       </div>
     </div>
@@ -105,6 +107,6 @@
   </div>
   </div>
 
-                
+
 
                 </div>

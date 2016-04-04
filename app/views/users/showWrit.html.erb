@@ -1,23 +1,25 @@
-<div class="jumbotron">
-  <h1 class="jumbotron-text"><%= @user.username %>'s Writings</h1>
+<div class="jumb">
+  <img class = "image-bubble" src="/images/Collab_bubble_purple.png">
+  <h5> <%= @user.username %>'s Writings</h5>
 </div>
+
 
 <!--Navbar -->
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 <div class="container">
 
-		
+
 	<div class="row">
-		
-		<div class="col-md-12"> 
-				
+
+		<div class="col-md-12">
+
 			<div class="panel panel-default">
-			
+
                 <div class="panel-heading">
-               
+
                     <span class="panel-title">
-					
+
 						<div class="pull-left">
 							<ul class="nav nav-tabs">
 								<li class="inactive"><%= link_to "Profile", user_path(@user) %> </li>
@@ -25,35 +27,35 @@
 								<li class="active"><a href=""><i class="glyphicon glyphicon-pencil"></i> Writings</a></li>
 							</ul>
 						</div>
-						
+
                             <div class="btn-group pull-right">
-                                    <% if current_user == @user %>    
+                                    <% if current_user == @user %>
                                     <%= button_to edit_user_path(@user), :class => "btn btn-default dropdown-toggle", method: "get" do %> Settings <i class="glyphicon glyphicon-cog"></i>
                                     <%end%>
                                     <%end%>
                                 <ul class="dropdown-menu" style="width:300px; padding:0px;">
-            						
+
 										<li>
-											    
+
 
 												    <div class="panel panel-default" id="preferences" style="margin:0px;">
-											   
+
 									    <div class="panel-body">
-						
+
     										<div class="form-group">
-											
+
 											</div>
-	 
-										</div>						
+
+										</div>
 												</div>
 										</li>
 									</ul>
                             </div>
-						
+
 						<div class="clearfix"></div>
 
 					</span>
-					
+
 				</div>
 
                 <div class="panel-body">
@@ -75,11 +77,11 @@
 								<% end %>
 								<% end %>
 
-                <% if @user.person == "Writer" %> 
+                <% if @user.person == "Writer" %>
                 <% if current_user == @user %>
                    <!--new button to create a new post-->
                    <div class = "centered">
-                <%= button_to new_writing_path, :class => "btn btn-info", method: "get" do %> Add a New Writing Post 
+                <%= button_to new_writing_path, :class => "btn btn-info", method: "get" do %> Add a New Writing Post
 									<%end%>
 									</div>
                 <% elsif current_user == @user %>
@@ -87,12 +89,12 @@
                 <% else %>
                     <% end %>
                     <% end %>
-             
+
 								</div>
 
 
 
-									
-								
+
+
 
                 </div>
